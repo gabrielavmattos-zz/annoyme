@@ -1,0 +1,43 @@
+package com.example.root.annoyme;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+/**
+ * Created by GabrielaMattos.
+ */
+public class ColetaDemo3 extends AppCompatActivity
+{
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.coletademo3);
+
+
+        createCheckListP1();
+    }
+
+    private void createCheckListP1()
+    {
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_p1);
+        String[] answers = getResources().getStringArray(R.array.coletaDemo3_p1_r);
+
+        for (int i = 0; i < answers.length; i++)
+        {
+
+            CheckBox checkBox = new CheckBox(this);
+            checkBox.setText(answers[i]);
+            linearLayout.addView(checkBox);
+
+        }
+
+    }
+}

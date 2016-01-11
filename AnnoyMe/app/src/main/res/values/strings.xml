@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">AnnoyMe</string>
+
+    <!-- Buttons -->
+    <string name="button_avancar">AVANÇAR</string>
+    <string name="button_enviar">ENVIAR</string>
+    <string name="label_discordo">Discordo completamente</string>
+    <string name="label_concordo">Concordo completamente</string>
+
+    <!-- Strings da parte de coleta de dados demograficos: coletaDemo-->
+
+    <string name="coletaDemo1">ETAPA 1 DE 5</string>
+    <string name="coletaDemo2">ETAPA 2 DE 5</string>
+    <string name="coletaDemo3">ETAPA 3 DE 5</string>
+    <string name="coletaDemo4">ETAPA 4 DE 5</string>
+    <string name="coletaDemo5">ETAPA 5 DE 5</string>
+
+    <!--***************************** PARTE 1 *****************************-->
+    <string name="coletaDemo1_p1">Sexo</string>
+        <string name="coletaDemo1_p1_r1">Feminino</string>
+        <string name="coletaDemo1_p1_r2">Masculino</string>
+    <string name="coletaDemo1_p2">Faixa etária</string>
+        <string name="coletaDemo1_p2_r1">18-25</string>
+        <string name="coletaDemo1_p2_r2">26-35</string>
+        <string name="coletaDemo1_p2_r3">36-50</string>
+        <string name="coletaDemo1_p2_r4">50+</string>
+    <string name="coletaDemo1_p3">Qual das frases abaixo melhor descreve seu conhecimento de computadores?</string>
+        <string-array name="coletaDemo1_p3_r">
+            <item>Preciso de ajuda para usar computadores, celulares, etc.</item>
+            <item>Consigo usar computadores para funções simples, como acessar a internet, escrever documentos, ouvir música, ...</item>
+            <item>Consigo usar computadores para funções mais complexas, como uso de programas especializados para edição de vídeos, fotos, análise estatísticas, ...</item>
+            <item>Sou capaz de programar novas funções para um computador.</item>
+        </string-array>
+    <string name="coletaDemo1_p4">Quais os principais usos que você faz de computadores / celulares/ tablets / ...?</string>
+        <string name="coletaDemo1_p4_r1">Trabalho</string>
+        <string name="coletaDemo1_p4_r2">Compras</string>
+        <string name="coletaDemo1_p4_r3">Entreterimento</string>
+        <string name="coletaDemo1_p4_r4">E-mails</string>
+        <string name="coletaDemo1_p4_r5">Operações bancárias</string>
+        <string name="coletaDemo1_p4_r6">Notícias</string>
+        <string name="coletaDemo1_p4_r7">Redes Sociais</string>
+        <string name="coletaDemo1_p4_r8">Estudo</string>
+        <string name="coletaDemo1_p4_r9">Outros</string>
+
+    <string name="coletaDemo1_p5">Quanto tempo por dia você passa utilizando computadores e outros dispositivos?</string>
+        <string-array name="coletaDemo1_p5_r">
+            <item>Menos que 2 horas</item>
+            <item>Entre 2 e 6 horas</item>
+            <item>Entre 6 e 8 horas</item>
+            <item>Mais do que 8 horas</item>
+        </string-array>
+
+    <!--***************************** PARTE 2 *****************************-->
+
+    <string name="coletaDemo2_label">Por favor, indique o seu nível de concordância com as frases abaixo:</string>
+    <string name="coletaDemo2_p1">Conto com meu celular / tablet / computador para lembrar de eventos importantes.</string>
+    <string name="coletaDemo2_p2">Possuo documentos importantes no meu computador / tablet / celular sem cópias em outros lugares.</string>
+    <string name="coletaDemo2_p3">Não confio em tecnologias em geral.</string>
+    <string name="coletaDemo2_p4">Quanto mais tecnológico algo é, fico mais preocupado que algo vai dar errado.</string>
+    <string name="coletaDemo2_p5">Desligo as notificações do celular / tablet / computador sempre que posso. </string>
+    <string name="coletaDemo2_p6">Não gosto de ser interrompido enquanto estou concentrado.</string>
+
+
+    <!--***************************** PARTE 3 *****************************-->
+
+    <string name="coletaDemo3_p1">Por favor, indique se você já fez alguma das opções abaixo: </string>
+        <string-array name="coletaDemo3_p1_r">
+            <item>Se recusou a dar informação online porque você achou que era muito pessoal ou desnecessária.</item>
+            <item>Decidiu não usar um site / aplicativo / programa porque você não tinha certeza como as suas informações seriam utilizadas.</item>
+            <item>Leu a política de privacidade de um site / aplicativo / programa. </item>
+            <item>Deletou os cookies do seu navegador. </item>
+            <item>Ligou a opção de "do not track" do seu navegador.</item>
+        </string-array>
+    <string name="coletaDemo3_p2">Por favor, indique o seu nível de concordância com as frases abaixo: </string>
+    <string name="coletaDemo3_p3">Consumidores perderam todo o controle sobre como suas informações pessoais são coletadas e usadas pelas empresas.</string>
+    <string name="coletaDemo3_p4">A maioria dos negócios lidam com informações pessoais coletadas dos seus clientes de forma correta e confidencial.</string>
+    <string name="coletaDemo3_p5">Existem leis e práticas organizacionais que fornecem um nível razoável de proteção para a privacidade dos consumidores.</string>
+
+    <!--***************************** PARTE 4 *****************************-->
+
+    <string name="coletaDemo4_label">Por favor, indique a frequência com a qual as frases abaixo se aplicam a você: </string>
+    <string name="coletaDemo4_p1">Eu prefiro um emprego que eu tenha muito controle sobre o que eu faço e quando eu faço.</string>
+    <string name="coletaDemo4_p2">Eu gosto de participar politicamente porque eu quero ter o máximo de participação que eu posso em como as políticas públicas devem ser feitas</string>
+    <string name="coletaDemo4_p3">Eu tento evitar situações que alguém me diz o que eu tenho que fazer.</string>
+    <string name="coletaDemo4_p4">Outras pessoas normalmente sabem o que é melhor pra mim.</string>
+    <string name="coletaDemo4_p5">Eu gosto de tomar as minhas próprias decisões.</string>
+    <string name="coletaDemo4_p6">Eu gosto de ter controle sobre o meu próprio destino.</string>
+    <string name="coletaDemo4_p7">Eu geralmente me considero mais capaz em lidar com situações do que outros.</string>
+    <string name="coletaDemo4_p8">Eu queria poder deixar outra pessoa decidir por mim o máximo das minhas decisões de vida.</string>
+    <string name="coletaDemo4_p9">Existem muitas situações que eu preferiria só tem uma opção do que ter que tomar uma decisão.</string>
+    <string name="coletaDemo4_p10">Eu gosto de esperar e ver se outra pessoa vai resolver um problema para eu não ter que me preocupar com isso.</string>
+
+    <string name="coletaDemo4_r1">Nunca</string>
+    <string name="coletaDemo4_r2">Não tenho certeza ou Na metada do tempo</string>
+    <string name="coletaDemo4_r3">Sempre</string>
+
+    <!--***************************** PARTE 5 *****************************-->
+
+    <string name="coletaDemo5_label">Por favor, indique o quanto cada uma das frases abaixo se aplica a você: </string>
+    <string name="coletaDemo5_p1">Eu me sinto confortável junto com pessoas.</string>
+    <string name="coletaDemo5_p2">Eu fala com muitas pessoas diferentes em festas.</string>
+    <string name="coletaDemo5_p3">Eu não gosto de chamar atenção para mim.</string>
+    <string name="coletaDemo5_p4">Eu gosto de ficar nos bastidores.</string>
+    <string name="coletaDemo5_p5">Eu demonstro interesse em outras pessoas.</string>
+    <string name="coletaDemo5_p6">Eu gosto de fazer as pessoas se sentirem bem.</string>
+    <string name="coletaDemo5_p7">Eu não me interesso nos problemas de outras pessoas.</string>
+    <string name="coletaDemo5_p8">Eu insulto pessoas.</string>
+    <string name="coletaDemo5_p9">Eu estou sempre preparado.</string>
+    <string name="coletaDemo5_p10">Eu sou preciso no meu trabalho.</string>
+    <string name="coletaDemo5_p11">Eu deixo meus pertences em qualquer lugar.</string>
+    <string name="coletaDemo5_p12">Eu frequentemente esqueço de por as coisas de volta no lugar.</string>
+    <string name="coletaDemo5_p13">Eu tenho o vocabulário rico.</string>
+    <string name="coletaDemo5_p14">Eu sou cheio de idéias.</string>
+    <string name="coletaDemo5_p15">Eu não estou interessado em ideias abstratas.</string>
+    <string name="coletaDemo5_p16">Eu não tenho uma boa imaginação.</string>
+    <string name="coletaDemo5_p17">Eu sou calmo na maior parte do tempo.</string>
+    <string name="coletaDemo5_p18">Eu raramente fico deprimido.</string>
+    <string name="coletaDemo5_p19">Eu me preocupo com as coisas.</string>
+    <string name="coletaDemo5_p20">Eu fico estressado facilmente.</string>
+
+
+
+    <!-- Strings da parte do estudo de caso: userStudy-->
+
+    <string name="userStudy_notificacao">Alguém quer acesso ao seu dado para motivo. O sistema tem nível de certeza de como você responderia.</string>
+    <string name="userStudy_notificacao_p">Você gostaria de ser interrompido para decidir se alguém terá acesso ao dado?</string>
+
+
+    <string name="userStudy_p1">O que melhor representa o seu humor agora?</string>
+    <string name="userStudy_p2">Você acha que essa interrupção afetou o seu humor?</string>
+        <string-array name="userStudy_p2_r">
+            <item>Sim, positivamente</item>
+            <item>Não, negativamente</item>
+            <item>Não</item>
+        </string-array>
+    <string name="userStudy_p3">Você está ocupado? </string>
+        <string-array name="userStudy_p3_r">
+            <item>Sim</item>
+            <item>Não</item>
+        </string-array>
+    <string name="userStudy_p4">O quanto você confia que o sistema responderia corretamente para você? </string>
+        <string name="userStudy_p4_r1">Nada</string>
+        <string name="userStudy_p4_r2">Muito</string>
+    <string name="userStudy_p5">Onde você está agora?</string>
+        <string-array name="userStudy_p5_r">
+            <item>Trabalho</item>
+            <item>Casa</item>
+            <item>Escola</item>
+            <item>Supermercado/Loja</item>
+            <item>Em trânsito</item>
+            <item>Médico</item>
+            <item>Restaurante</item>
+            <item>Bar</item>
+            <item>Cinema</item>
+            <item>Parque</item>
+            <item>Outros</item>
+        </string-array>
+    <string name="userStudy_p6">O que você está fazendo agora?</string>
+        <string-array name="userStudy_p6_r">
+            <item>Estudando</item>
+            <item>Em aula</item>
+            <item>Em reunião</item>
+            <item>Vendo TV/Filme</item>
+            <item>Cozinhando</item>
+            <item>Conversando</item>
+            <item>Banho</item>
+            <item>Dirigindo</item>
+            <item>Compras</item>
+            <item>Comendo</item>
+            <item>Outros</item>
+        </string-array>
+    <string name="userStudy_p7">Quem está próximo de você agora?</string>
+        <string-array name="userStudy_p7_r">
+            <item>Desconhecidos</item>
+            <item>Amigos</item>
+            <item>Familiares</item>
+            <item>Colegas</item>
+            <item>Parceiro</item>
+            <item>Ninguém</item>
+        </string-array>
+    <string name="userStudy_p8">Estou interagindo com essas pessoas agora.</string>
+    <string name="userStudy_p9">Você acha que as pessoas à sua volta se sentiram incomodadas com a sua interrupção?</string>
+    <string-array name="userStudy_p9_r">
+        <item>Sim</item>
+        <item>Não</item>
+        <item>Não me importa</item>
+    </string-array>
+
+
+    <!-- Strings da parte do estudo de caso: agoraNao-->
+    <string name="userStudy_agoraNao">Você não pode responder uma das interrupções. Por quê?</string>
+    <string name="userStudy_agoraNao_label">Você estava aqui: </string>
+
+</resources>
