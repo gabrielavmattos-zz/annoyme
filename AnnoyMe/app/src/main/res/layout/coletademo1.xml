@@ -67,23 +67,23 @@
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:id="@+id/radioGroup_q1"
                         android:orientation="vertical">
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p1_r1"
-                            android:id="@+id/radioButton_SexoF" />
+                            android:text="@string/coletaDemo1_p1_r1" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p1_r2"
-                            android:id="@+id/radioButton_SexoM" />
+                            android:text="@string/coletaDemo1_p1_r2" />
 
                     </RadioGroup>
 
                     <RadioGroup
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioGroup_q2">
 
 
                         <LinearLayout
@@ -94,15 +94,13 @@
                             <RadioButton
                                 style="@style/fontAnswer"
                                 android:text="@string/coletaDemo1_p2_r1"
-                                android:layout_marginLeft="55dp"
-                                android:id="@+id/radioButton_Faixa1" />
+                                android:layout_marginLeft="55dp" />
 
 
                             <RadioButton
                                 style="@style/fontAnswer"
                                 android:text="@string/coletaDemo1_p2_r3"
-                                android:layout_marginLeft="40dp"
-                                android:id="@+id/radioButton_Faixa3" />
+                                android:layout_marginLeft="40dp" />
 
                         </LinearLayout>
 
@@ -114,15 +112,13 @@
                             <RadioButton
                                 style="@style/fontAnswer"
                                 android:text="@string/coletaDemo1_p2_r2"
-                                android:layout_marginLeft="55dp"
-                                android:id="@+id/radioButton_Faixa2" />
+                                android:layout_marginLeft="55dp" />
 
 
                             <RadioButton
                                 style="@style/fontAnswer"
                                 android:text="@string/coletaDemo1_p2_r4"
-                                android:layout_marginLeft="40dp"
-                                android:id="@+id/radioButton_Faixa4" />
+                                android:layout_marginLeft="40dp" />
 
                         </LinearLayout>
                     </RadioGroup>
@@ -138,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/radioButton_p3"/>
+                    android:id="@+id/radioGroup_q3"/>
 
 
                 <TextView
@@ -239,7 +235,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/radioButton_p5"/>
+                    android:id="@+id/radioGroup_q5"/>
 
                 <Button
                     style="@style/button"

@@ -35,6 +35,7 @@ public class ColetaDemo3 extends AppCompatActivity
 
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(answers[i]);
+            checkBox.setId(i);
             linearLayout.addView(checkBox);
 
         }
