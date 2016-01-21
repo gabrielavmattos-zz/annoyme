@@ -62,30 +62,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q1" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p1_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p1_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p1_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p1_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p1_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -122,30 +118,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q2" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p2_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p2_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p2_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p2_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p2_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -183,32 +175,27 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q3" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p3_0" />
+                          <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p3_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p3_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p3_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p3_4"
                             android:layout_marginLeft="30dp" />
-
                     </RadioGroup>
 
                     <LinearLayout
@@ -242,30 +229,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q4" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p4_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p4_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p4_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p4_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p4_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -302,30 +285,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q5" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p5_0" />
+                      <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p5_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p5_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p5_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p5_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -361,32 +340,27 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q6" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p6_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p6_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p6_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p6_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p6_4"
                             android:layout_marginLeft="30dp" />
-
                     </RadioGroup>
 
                     <LinearLayout
@@ -420,30 +394,25 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q7" 
                         android:gravity="center">
+ <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p7_0" />
-
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p7_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p7_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p7_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p7_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -479,30 +448,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q8" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p8_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p8_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p8_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p8_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p8_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -538,32 +503,27 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q9" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p9_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p9_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p9_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p9_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p9_4"
                             android:layout_marginLeft="30dp" />
-
                     </RadioGroup>
 
                     <LinearLayout
@@ -597,30 +557,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q10" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p10_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p10_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p10_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p10_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p10_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -656,30 +612,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q11" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p11_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p11_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p11_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p11_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p11_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -716,30 +668,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q12" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p12_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p12_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p12_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p12_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p12_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -776,30 +724,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q13" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p13_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p13_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p13_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p13_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p13_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -836,30 +780,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q14" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p14_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p14_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p14_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p14_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p14_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -896,30 +836,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q15" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p15_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p15_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p15_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p15_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p15_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -955,30 +891,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q16" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p16_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p16_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p16_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p16_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p16_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -1015,30 +947,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q17" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p17_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p17_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p17_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p17_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p17_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -1074,30 +1002,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q18" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p18_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p18_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p18_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p18_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p18_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -1133,30 +1057,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q19" 
                         android:gravity="center">
 
                         <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p19_0" />
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p19_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p19_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p19_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p19_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -1192,30 +1112,26 @@
                         android:orientation="horizontal"
                         android:measureWithLargestChild="false"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup_q20" 
                         android:gravity="center">
 
-                        <RadioButton
-                            style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p20_0" />
+                         <RadioButton
+                            style="@style/fontAnswer"/>
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p20_1"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p20_2"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p20_3"
                             android:layout_marginLeft="30dp" />
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:id="@+id/radioButton_p20_4"
                             android:layout_marginLeft="30dp" />
 
                     </RadioGroup>
@@ -1248,8 +1164,8 @@
                     style="@style/button"
                     android:layout_width="112dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_avancar"
-                    android:id="@+id/button_coletademo1"
+                    android:text="@string/button_enviar"
+                    android:id="@+id/button_coletademo5"
                     android:layout_gravity="left|center_vertical"
                     android:allowUndo="false"
                     android:layout_marginLeft="225dp" />

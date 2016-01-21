@@ -33,12 +33,6 @@ public class ColetaDemo1 extends AppCompatActivity {
     private CheckBox checkBox;
     private Button btnAvancar;
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -55,6 +49,7 @@ public class ColetaDemo1 extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 ArrayList<String> listaRespostas = new ArrayList<String>();
 

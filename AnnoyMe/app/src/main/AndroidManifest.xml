@@ -2,33 +2,68 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.root.annoyme" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.intent.action.QUICKBOOT_POWERON" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".ColetaDemo1">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".ColetaDemo2" />
+            android:name=".ColetaDemo2"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name=".ColetaDemo3" />
+            android:name=".ColetaDemo3"
+            android:theme="@style/AppTheme" />
         <activity
-            android:name=".ColetaDemo4" />
+            android:name=".ColetaDemo4"
+            android:theme="@style/AppTheme" />
         <activity
-            android:name=".ColetaDemo5" />
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:name=".ColetaDemo5"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ColetaDemo1"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".ColetaPerso1"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".UserStudy"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".UserStudy1"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".UserStudy2"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".AgoraNao"/>
+        <activity
+            android:name=".AgoraNao1"
+            android:theme="@style/AppTheme"/>
+
+        <service  android:name=".BackgroundService" />
+        <receiver android:name=".MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

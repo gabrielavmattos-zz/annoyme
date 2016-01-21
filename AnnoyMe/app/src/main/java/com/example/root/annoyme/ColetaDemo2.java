@@ -23,7 +23,6 @@ public class ColetaDemo2 extends AppCompatActivity
 
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    private CheckBox checkBox;
     private Button btnAvancar;
     private ArrayList<String> listaRespostas;
 
@@ -33,11 +32,7 @@ public class ColetaDemo2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo2);
 
-        if(!getIntent().getStringArrayListExtra("respostas").isEmpty())
-        {
-            listaRespostas = getIntent().getStringArrayListExtra("respostas");
-        }
-
+        listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
         /********** Salvar as informações **********/
         btnAvancar = (Button) findViewById(R.id.button_coletademo2);
@@ -51,75 +46,39 @@ public class ColetaDemo2 extends AppCompatActivity
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q1);
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 radioButton = (RadioButton) findViewById(selectedId);
-                String text = (String) radioButton.getText();
-                listaRespostas.add(text);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q2);
                 selectedId = radioGroup.getCheckedRadioButtonId();
                 radioButton = (RadioButton) findViewById(selectedId);
-                text = (String) radioButton.getText();
-                listaRespostas.add(text);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q3);
                 selectedId = radioGroup.getCheckedRadioButtonId();
                 radioButton = (RadioButton) findViewById(selectedId);
-                text = (String) radioButton.getText();
-                listaRespostas.add(text);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
 
-                text = "";
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r1);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r2);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r3);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r4);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r5);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r6);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r7);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r8);
-
-                if(checkBox.isChecked())
-                    text += (String) checkBox.getText() + '/';
-
-                checkBox = (CheckBox) findViewById(R.id.checkbox_p4_r9);
-
-                if(checkBox.isChecked())
-                    text +=  ((EditText) findViewById(R.id.textOutros)).getText().toString();
-
-                listaRespostas.add(text);
+                radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q4);
+                selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q5);
                 selectedId = radioGroup.getCheckedRadioButtonId();
                 radioButton = (RadioButton) findViewById(selectedId);
-                text = (String) radioButton.getText();
-                listaRespostas.add(text);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
+
+                radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q6);
+                selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                listaRespostas.add(Integer.toString(selectedId));
+
 
                 Intent nextActivity = new Intent(ColetaDemo2.this, ColetaDemo3.class);
                 nextActivity.putStringArrayListExtra("respostas", listaRespostas);
@@ -133,6 +92,8 @@ public class ColetaDemo2 extends AppCompatActivity
 
 
     }
+
+    /*CONFERIIIIIIIIIIIIIIR*/
 
     @Override
     public void onBackPressed() {

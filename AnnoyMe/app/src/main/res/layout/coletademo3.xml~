@@ -77,7 +77,6 @@
                     android:orientation="horizontal"
                     android:measureWithLargestChild="false"
                     android:layout_gravity="center"
-                    android:id="@+id/radioGroup_q2" 
                     android:gravity="center">
 
                     <RadioButton
@@ -132,7 +131,7 @@
                     android:orientation="horizontal"
                     android:measureWithLargestChild="false"
                     android:layout_gravity="center"
-                    android:id="@+id/radioGroup_q3" 
+                    android:id="@+id/radioGroup_q4" 
                     android:gravity="center">
 
                     <RadioButton
@@ -178,7 +177,7 @@
                 </LinearLayout>
                 <TextView
                     style="@style/fontAnswer"
-                    android:text="@string/coletaDemo3_p4"/>
+                    android:text="@string/coletaDemo3_p5"/>
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -186,7 +185,7 @@
                     android:orientation="horizontal"
                     android:measureWithLargestChild="false"
                     android:layout_gravity="center"
-                    android:id="@+id/radioGroup_q4"
+                    android:id="@+id/radioGroup_q5" 
                     android:gravity="center">
 
                     <RadioButton

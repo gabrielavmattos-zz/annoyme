@@ -18,7 +18,7 @@
 
         <TextView
             style="@style/fontTitle"
-            android:text="@string/coletaDemo3"
+            android:text="@string/coletaDemo2"
             android:id="@+id/title" />
 
     </android.support.v7.widget.Toolbar>
@@ -29,8 +29,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_margin="5dp">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -39,27 +38,12 @@
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-
-                    <TextView
-                        style="@style/fontQuestion"
-                        android:text="@string/coletaDemo3_p1"/>
-
-
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/layout_p1">
-
-                </LinearLayout>
-
-                <TextView
-                    style="@style/fontQuestion"
-                    android:text="@string/coletaDemo3_p2"/>
+            <TextView
+                style="@style/fontQuestion"
+                android:text="@string/coletaDemo2_label"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -67,21 +51,78 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp">
 
+
                 <TextView
                     style="@style/fontAnswer"
-                    android:text="@string/coletaDemo3_p3"/>
+                    android:text="@string/coletaDemo2_p1"/>
 
                 <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:measureWithLargestChild="false"
+                    android:id="@+id/radioGroup_q1"
                     android:layout_gravity="center"
-                    android:id="@+id/radioGroup_q2" 
                     android:gravity="center">
 
                     <RadioButton
-                        style="@style/fontAnswer"/>
+                        style="@style/fontAnswer" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_discordo"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_concordo"
+                        android:layout_width="106dp"
+                        android:layout_marginLeft="135dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/fontAnswer"
+                    android:text="@string/coletaDemo2_p2"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:measureWithLargestChild="false"
+                    android:id="@+id/radioGroup_q2"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <RadioButton
+                        style="@style/fontAnswer" />
 
                     <RadioButton
                         style="@style/fontAnswer"
@@ -107,6 +148,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
 
+
                     <TextView
                         style="@style/fontLabel"
                         android:text="@string/label_discordo"
@@ -122,17 +164,18 @@
                         android:gravity="center" />
                 </LinearLayout>
 
+
                 <TextView
                     style="@style/fontAnswer"
-                    android:text="@string/coletaDemo3_p4"/>
+                    android:text="@string/coletaDemo2_p3"/>
 
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:measureWithLargestChild="false"
+                    android:id="@+id/radioGroup_q3"
                     android:layout_gravity="center"
-                    android:id="@+id/radioGroup_q3" 
                     android:gravity="center">
 
                     <RadioButton
@@ -176,9 +219,10 @@
                         android:layout_marginLeft="135dp"
                         android:gravity="center" />
                 </LinearLayout>
+
                 <TextView
                     style="@style/fontAnswer"
-                    android:text="@string/coletaDemo3_p4"/>
+                    android:text="@string/coletaDemo2_p4"/>
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -216,6 +260,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
 
+
                     <TextView
                         style="@style/fontLabel"
                         android:text="@string/label_discordo"
@@ -231,14 +276,125 @@
                         android:gravity="center" />
                 </LinearLayout>
 
+                <TextView
+                    style="@style/fontAnswer"
+                    android:text="@string/coletaDemo2_p5"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:measureWithLargestChild="false"
+                    android:layout_gravity="center"
+                    android:id="@+id/radioGroup_q5"
+                    android:gravity="center">
+
+                    <RadioButton
+                        style="@style/fontAnswer" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                </RadioGroup>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_discordo"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_concordo"
+                        android:layout_width="106dp"
+                        android:layout_marginLeft="135dp"
+                        android:gravity="center" />
                 </LinearLayout>
+
+                <TextView
+                    style="@style/fontAnswer"
+                    android:text="@string/coletaDemo2_p6"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:measureWithLargestChild="false"
+                    android:layout_gravity="center"
+                    android:id="@+id/radioGroup_q6"
+                    android:gravity="center">
+
+                    <RadioButton
+                        style="@style/fontAnswer" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                    <RadioButton
+                        style="@style/fontAnswer"
+                        android:layout_marginLeft="30dp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_discordo"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                    <TextView
+                        style="@style/fontLabel"
+                        android:text="@string/label_concordo"
+                        android:layout_width="106dp"
+                        android:layout_marginLeft="135dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
 
                 <Button
                     style="@style/button"
                     android:layout_width="112dp"
                     android:layout_height="wrap_content"
                     android:text="@string/button_avancar"
-                    android:id="@+id/button_coletademo3"
+                    android:id="@+id/button_coletademo2"
                     android:layout_gravity="left|center_vertical"
                     android:allowUndo="false"
                     android:layout_marginLeft="225dp" />

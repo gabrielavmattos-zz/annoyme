@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AnnoyMe</string>
 
+
+    <string name="notificacao_inicial">Olá, clique aqui para continuar o estudo.</string>
+    <string name="notificacao_coletaDemo">Olá, clique aqui para continuar o estudo.</string>
+    <string name="notificacao_coletaPerso">Olá, clique aqui para continuar o estudo.</string>
+
     <!-- Buttons -->
     <string name="button_avancar">AVANÇAR</string>
     <string name="button_enviar">ENVIAR</string>
@@ -90,6 +95,7 @@
     <string name="coletaDemo4_p9">Existem muitas situações que eu preferiria só tem uma opção do que ter que tomar uma decisão.</string>
     <string name="coletaDemo4_p10">Eu gosto de esperar e ver se outra pessoa vai resolver um problema para eu não ter que me preocupar com isso.</string>
 
+
     <string name="coletaDemo4_r1">Nunca</string>
     <string name="coletaDemo4_r2">Não tenho certeza ou Na metada do tempo</string>
     <string name="coletaDemo4_r3">Sempre</string>
@@ -111,65 +117,233 @@
     <string name="coletaDemo5_p12">Eu frequentemente esqueço de por as coisas de volta no lugar.</string>
     <string name="coletaDemo5_p13">Eu tenho o vocabulário rico.</string>
     <string name="coletaDemo5_p14">Eu sou cheio de idéias.</string>
-    <string name="coletaDemo5_p16">Eu não estou interessado em ideias abstratas.</string>
-    <string name="coletaDemo5_p17">Eu não tenho uma boa imaginação.</string>
-    <string name="coletaDemo5_p18">Eu sou calmo na maior parte do tempo.</string>
-    <string name="coletaDemo5_p19">Eu raramente fico deprimido.</string>
-    <string name="coletaDemo5_p20">Eu me preocupo com as coisas.</string>
-    <string name="coletaDemo5_p21">Eu fico estressado facilmente.</string>
+    <string name="coletaDemo5_p15">Eu não estou interessado em ideias abstratas.</string>
+    <string name="coletaDemo5_p16">Eu não tenho uma boa imaginação.</string>
+    <string name="coletaDemo5_p17">Eu sou calmo na maior parte do tempo.</string>
+    <string name="coletaDemo5_p18">Eu raramente fico deprimido.</string>
+    <string name="coletaDemo5_p19">Eu me preocupo com as coisas.</string>
+    <string name="coletaDemo5_p20">Eu fico estressado facilmente.</string>
+
+
+
+    <!-- Strings da parte do estudo de coleta de dados de personalização-->
+	<string name="coletaPerso1">ETAPA 1 de .. </string>
+    <string name="coletaPerso_r1">Não me preocuparia</string>
+    <string name="coletaPerso_r2">Normal</string>
+    <string name="coletaPerso_r3">Me preocuparia muito</string>
+
+    <string name="coletaPerso1_p1">Por favor, classifique o cenário abaixo de acordo com o quanto você acredita que essa é uma situação sensível de privacidade marcando o quanto você se preocuparia com compartilhar o que foi requisitado no contexto apresentado: </string>
+          <string-array name="coletaPerso1_p1_r">
+			
+			<!-- Classificação da tabela: UNTRUSTED	HIGH SENSITIVITY	NOT IMPORTANT -->
+
+            <item>Um restaurante não confiável quer acesso a seus dados de saúde para sugerir pratos adequados.</item>
+            <item>Um restaurante não confiável quer acesso a seu CPF para colocar na nota fiscal.</item>
+            <item>Uma loja não confiável que acesso ao seu e-mail para envio da NFE (nota fiscal eletrônica).</item>
+
+			
+			<!-- Classificação da tabela: UNTRUSTED	HIGH SENSITIVITY	IRRELEVANT    -->
+
+            <item>Um restaurante não confiável quer acesso a seus dados de saúde para informar decisões futuras de escolhas de receitas</item>
+            <item>Uma loja não confiável quer acesso ao seu e-mail para envio de propagandas.</item>
+
+
+			<!-- Classificação da tabela: UNTRUSTED	HIGH SENSITIVITY	IMPORTANT    -->
+
+            <item>Um restaurante não confiável quer acesso aos seus dados bancários para pagamento da conta.</item>
+			<item>Um supermercado não confiável quer acesso ao endereço da sua casa para envio das compras.</item>
+            <item>Uma loja não confiável quer acesso ao seu e-mail para envio do certificado de garantia de um produto.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	MEDIUM SENSITIVITY	NOT IMPORTANT    -->
+
+            <item>Um restaurante não confiável quer acesso ao seu peso para sugerir pratos adequados.</item>
+			<item> Um painel eletrônico deseja informações sobre seu itinerário para dicas de caminhos alternativos.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	MEDIUM SENSITIVITY	IRRELEVANT    -->
+
+            <item>Um restaurante não confiável quer acesso ao seu peso para informar decisões futuras de escolhas de receitas</item>
+            <item>Um painel de propaganda deseja informações sobre seu peso para seleção de propagandas.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	MEDIUM SENSITIVITY	IMPORTANT    -->
+
+            <item>Um painel eletrônico deseja informações sobre a placa do seu carro para prover informações sobre restrições de circulação.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	LOW SENSITIVITY	NOT IMPORTANT    -->
+
+            <item>Um restaurante não confiável quer acesso às suas preferências de comida para sugerir pratos adequados.</item>
+            <item>A bomba de combustível do posto de gasolina quer informações sobre consumo do seu carro.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	LOW SENSITIVITY	IRRELEVANT   -->
+
+            <item>Sua rede social quer acesso às suas escolhas diárias de roupa para divulgar para os seus seguidores.</item>
+            <item>Um restaurante não confiável quer acesso às suas preferências de comida para informar decisões futuras de escolhas de receitas.</item>
+            <item>O compressor de ar do posto de gasolina quer informações sobre o modelo do seu carro para determinar a pressão adequada do calibrador.</item>
+
+			<!-- Classificação da tabela: UNTRUSTED	LOW SENSITIVITY	IMPORTANT   -->
+
+			<item>O sistema de um estacionamento deseja saber se seu carro tem um mecanismo de pagamento automático para determinar a forma de cobrança.</item>
+
+			<!-- Classificação da tabela: UNKNOWN	HIGH SENSITIVITY	NOT IMPORTANT   -->
+
+            <item>A cafeteira do restaurante quer acesso aos seus dados de sono para fazer um café de acordo com a sua necessidade.</item>
+            <item>A livraria quer acesso ao seu CPF para cadastro no sistema de sorteio de brindes.</item>
+
+			<!-- Classificação da tabela: UNKNOWN	HIGH SENSITIVITY	IRRELEVANT   -->
+
+
+            <item>Uma farmácia quer acesso aos seus dados de sono para fazer propaganda de remédios apropriados para você</item>
+            <item>O sistema do restaurante quer acesso às informações sobre suas restrições alimentares para propor um menu personalizado.
+</item>
+
+			<!-- Classificação da tabela: UNKNOWN	HIGH SENSITIVITY	IMPORTANT   -->
+
+
+            <item>Um serviço de táxi quer acesso ao endereço de casa para poder passar para lhe buscar</item>
+            <item>Um serviço de táxi quer acesso aos seus dados bancários para poder cobrar a tarifa da corrida</item>
+            <item>A farmácia quer informações sobre sua receita médica para a consulta de estoque e seleção de produto.
+</item>
+
+			<!-- Classificação da tabela: UNKNOWN	MEDIUM SENSITIVITY	NOT IMPORTANT   -->
+
+            <item>Um serviço de táxi quer acesso ao endereço do seu local de trabalho para calcular a sua tarifa a priori</item>
+			<item>A farmácia quer informações sobre seu histórico de saúde para montagem de informações estatísticas.</item>
+
+	
+			<!-- Classificação da tabela: UNKNOWN	MEDIUM SENSITIVITY	IRRELEVANT   -->
+
+            <item>Um supermercado quer acesso aos seus dados de higiêne bucal para fazer propaganda de produtos apropriados para você.</item>
+			<item>Uma loja de esporte quer acesso aos seu peso para fazer propaganda de produtos apropriados.</item>
+			<item>Outdoors de propaganda querem acesso às suas preferências de compras para mostrarem propagandas adequadas.</item>
+
+			<!-- Classificação da tabela: UNKNOWN	MEDIUM SENSITIVITY	IMPORTANT   -->
+
+			<item>O sistema de atendimento de uma loja quer acesso à sua data de nascimento para determinar sua prioridade de atendimento.</item>
+
+			<!-- Classificação da tabela: UNKNOWN	LOW SENSITIVITY	NOT IMPORTANT   -->
+
+			<item>Um serviço de táxi quer acesso ao seu horário de chegada no trabalho para enviarem um táxi no horário mais adequado.</item>
+			<item>A empresa de ar condicionado quer acesso à sua preferência de temperatura para realizar melhorias nos aparelhos.</item>
+			<item>A livraria quer informações sobre sua preferência de gênero literário para propor recomendações de compras.</item>
+			
+			<!-- Classificação da tabela: UNKNOWN	LOW SENSITIVITY	IRRELEVANT  -->
+
+			<item>Uma loja de roupa quer acesso às suas escolhas diárias de roupa para fazer propaganda adequada à você</item>
+			<item>Um serviço de táxi quer acesso às suas preferências musicais para tocar músicas adequadas</item>
+			<item>O sistema de refrigeração do restaurante quer informações sobre sua sensação de calor no momento para adequar a temperatura do salão.</item>
+
+
+			<!-- Classificação da tabela: UNKNOWN	LOW SENSITIVITY	IMPORTANT  -->
+
+			<item>Uma ONG quer acesso ao seu consumo de água para sugerir planos de conservação e educação hídrica.</item>
+			<item>Uma loja quer saber seu nome para cadastrá-lo na fila de atendimento.</item>
+
+			<!-- Classificação da tabela: TRUSTED	HIGH SENSITIVITY	NOT IMPORTANT  -->
+
+			<item>A sua cafeteira quer acesso aos seus dados de sono para fazer um café de acordo com a sua necessidade.</item>
+			<item>A sua cozinha quer acesso a seus dados de saúde para preparar um café da manhã adequado.</item>
+			<item>Seu carro quer usar informações sobre sua localização para registro em um sistema remoto.</item>
+
+			<!-- Classificação da tabela: TRUSTED	HIGH SENSITIVITY	IRRELEVANT  -->
+
+			<item>O seu local de trabalho quer acesso à sua localização para permitir que seus colegas lhe encontrem facilmente.</item>
+			<item>Sua cadeira no escritório quer saber sua identidade para manter histórico sobre seu peso.</item>
+
+
+			<!-- Classificação da tabela: TRUSTED	HIGH SENSITIVITY	IMPORTANT  -->
+
+			<item>O seu médico quer acesso aos seus dados de sono para acompanhar a sua insônia.</item>
+			<item>O seu médico quer acesso a seus dados de saúde para acompanhar a sua saúde.</item>
+			<item>O seu local de trabalho quer acesso à sua agenda para reservar recursos que podem ser necessários.</item>
+
+			<!-- Classificação da tabela: TRUSTED	MEDIUM SENSITIVITY	NOT IMPORTANT  -->
+
+			<item>O seu sistema de despensa quer acesso aos seus dados de higiêne bucal para adicionar mais pasta de dente na sua lista de compras.</item>
+			<item>O seu contador de calorias quer acesso a dados sobre o seu peso para fazer o cálculo de calorias gastas corretamente.</item>
+			<item>O seu telefone quer acesso à sua agenda para ajustar o nível do toque de acordo com as suas tarefas.</item>
+
+			<!-- Classificação da tabela: TRUSTED	MEDIUM SENSITIVITY	IRRELEVANT  -->
+
+			<item>A cantina em seu local de trabalho quer acesso a seu histórico de saúde para propor um menu específico.</item>
+
+			<!-- Classificação da tabela: TRUSTED	LOW SENSITIVITY	NOT IMPORTANT  -->
+
+			<item>A sua cidade quer acesso a emissão de gás carbônico do seu carro para realizar um planejamento de meio ambiente.</item>
+			<item>O seu sistema de entretenimento quer acesso às suas buscas mais recentes de notícias para selecionar uma programação relevante.</item>
+			<item>O sistema de refrigeração do cômodo em que você está em sua casa quer saber seu tempo estimado de permanência para ajustes da refrigeração.</item>
+
+
+			<!-- Classificação da tabela: TRUSTED	LOW SENSITIVITY	IRRELEVANT  -->
+
+			<item>Seu carro quer saber quem está dirigindo para manter informações estatísticas.</item>
+
+
+			<!-- Classificação da tabela: TRUSTED	LOW SENSITIVITY	IMPORTANT  -->
+
+			<item>O seu médico quer acesso aos seu número de passos para acompanhar a sua atividade física pós cirurgia.</item>
+			<item>Seu carro quer informações sobre seu itinerário para determinar se tem autonomia para o percurso.</item>
+        </string-array>
+
 
 
 
     <!-- Strings da parte do estudo de caso: userStudy-->
 
-    <string name="userStudy_notificacao">Alguém quer acesso ao seu dado para motivo. O sistema tem nível de certeza de como você responderia.</string>
+    <string name="userStudy_notificacao">Hora de participar do estudo. Você pode agora?</string>
+    <string name="userStudy_notificacao_r1">Não</string>
+    <string name="userStudy_notificacao_r2">Sim</string>
     <string name="userStudy_notificacao_p">Você gostaria de ser interrompido para decidir se alguém terá acesso ao dado?</string>
 
-
+    <string name="userStudy_agoraNao_p">Você pode nos dizer o por quê de não poder participar do estudo?</string>
+        <string-array name="userStudy_agoraNao_r">
+            <item>A situação não permite</item>
+            <item>Estou cansado / Não estou com vontade</item>
+            <item>Não vi a requisição</item>
+            <item>Já fui muito interrompido</item>
+        </string-array>
     <string name="userStudy_p1">O que melhor representa o seu humor agora?</string>
-    <string name="userStudy_p2">Você acha que essa interrupção afetou o seu humor?</string>
+  <!--  <string name="userStudy_p2">Você acha que essa interrupção afetou o seu humor?</string>
         <string-array name="userStudy_p2_r">
             <item>Sim, positivamente</item>
             <item>Não, negativamente</item>
             <item>Não</item>
-        </string-array>
-    <string name="userStudy_p3">Você está ocupado? </string>
-        <string-array name="userStudy_p3_r">
-            <item>Sim</item>
-            <item>Não</item>
-        </string-array>
-    <string name="userStudy_p4">O quanto você confia que o sistema responderia corretamente para você? </string>
-        <string name="userStudy_p4_r1">Nada</string>
-        <string name="userStudy_p4_r2">Muito</string>
+        </string-array>-->
+    <string name="userStudy_p2">Você está ocupado? </string>
+    <string name="userStudy_p2_r1">Sim</string>
+    <string name="userStudy_p2_r2">Não</string>
+    <string name="userStudy_p3">Você está interagindo com outras pessoas? </string>
+    <string name="userStudy_p3_r1">Sim</string>
+    <string name="userStudy_p3_r2">Não</string>
+    <string name="userStudy_p4">Você acha que na situação atual é socialmente aceitável ser interrompido?</string>
+        <string name="userStudy_p4_r1">Sim</string>
+        <string name="userStudy_p4_r2">Não</string>
+        <string name="userStudy_p4_r3"> ... mas não me importo com isso.</string>
     <string name="userStudy_p5">Onde você está agora?</string>
-        <string-array name="userStudy_p5_r">
-            <item>Trabalho</item>
-            <item>Casa</item>
-            <item>Escola</item>
-            <item>Supermercado/Loja</item>
-            <item>Em trânsito</item>
-            <item>Médico</item>
-            <item>Restaurante</item>
-            <item>Bar</item>
-            <item>Cinema</item>
-            <item>Parque</item>
-            <item>Outros</item>
-        </string-array>
+        <string name="userStudy_p5_r1">Trabalho</string>
+        <string name="userStudy_p5_r2">Casa</string>
+        <string name="userStudy_p5_r3">Escola</string>
+        <string name="userStudy_p5_r4">Supermercado/Loja</string>
+        <string name="userStudy_p5_r5">Em trânsito</string>
+        <string name="userStudy_p5_r6">Outros</string>
+        <string name="userStudy_p5_r7">Médico</string>
+        <string name="userStudy_p5_r8">Restaurante</string>
+        <string name="userStudy_p5_r9">Bar</string>
+        <string name="userStudy_p5_r10">Cinema</string>
+        <string name="userStudy_p5_r11">Parque</string>
     <string name="userStudy_p6">O que você está fazendo agora?</string>
-        <string-array name="userStudy_p6_r">
-            <item>Estudando</item>
-            <item>Em aula</item>
-            <item>Em reunião</item>
-            <item>Vendo TV/Filme</item>
-            <item>Cozinhando</item>
-            <item>Conversando</item>
-            <item>Banho</item>
-            <item>Dirigindo</item>
-            <item>Compras</item>
-            <item>Comendo</item>
-            <item>Outros</item>
-        </string-array>
-    <string name="userStudy_p7">Quem está próximo de você agora?</string>
+
+
+        <string name="userStudy_p6_r1">Estudando</string>
+        <string name="userStudy_p6_r2">Em aula</string>
+        <string name="userStudy_p6_r3">Em reunião</string>
+        <string name="userStudy_p6_r4">Vendo TV/Filme</string>
+        <string name="userStudy_p6_r5">Cozinhando</string>
+        <string name="userStudy_p6_r6">Conversando</string>
+        <string name="userStudy_p6_r7">Banho</string>
+        <string name="userStudy_p6_r8">Dirigindo</string>
+        <string name="userStudy_p6_r9">Compras</string>
+        <string name="userStudy_p6_r10">Comendo</string>
+        <string name="userStudy_p6_r11">Outros</string>
+ <!--   <string name="userStudy_p7">Quem está próximo de você agora?</string>
         <string-array name="userStudy_p7_r">
             <item>Desconhecidos</item>
             <item>Amigos</item>
@@ -184,7 +358,7 @@
         <item>Sim</item>
         <item>Não</item>
         <item>Não me importa</item>
-    </string-array>
+    </string-array>-->
 
 
     <!-- Strings da parte do estudo de caso: agoraNao-->
