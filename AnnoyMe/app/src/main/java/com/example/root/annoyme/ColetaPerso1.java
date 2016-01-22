@@ -45,10 +45,8 @@ public class ColetaPerso1 extends AppCompatActivity
         cenario = new Cenario();
 
         context = this;
-        date = getIntent().getStringExtra("hora");
-        listaRespostas = new ArrayList<String>();
+        listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
-        listaRespostas.add(date);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_perso1);
         final String[] answers = getResources().getStringArray(R.array.coletaPerso1_p1_r);

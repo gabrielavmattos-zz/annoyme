@@ -369,7 +369,7 @@
 
 
     <!-- Strings da parte do estudo de caso: agoraNao-->
-    <string name="userStudy_agoraNao">Você não pode responder uma das interrupções. Por quê?</string>
+    <string name="userStudy_agoraNao">Você não pode responder uma das interrupções. Poderia elaborar um motivo?</string>
     <string name="userStudy_agoraNao_label">Você estava aqui: </string>
 
 </resources>

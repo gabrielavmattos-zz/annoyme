@@ -1,7 +1,9 @@
 package com.example.root.annoyme;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -62,9 +64,13 @@ public class MainActivity extends Activity {
         SimpleDateFormat simpleFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm");
         String date = simpleFormat.format(calendar.getTimeInMillis());
 
+        ArrayList<String> listaRespostas = new ArrayList<String>();
+        listaRespostas.add(date);
+
         Intent myIntent = new Intent(MainActivity.this, MyBroadcastReceiver.class);
         myIntent.putExtra("tipo", tipo);
-        myIntent.putExtra("hora", date);
+        myIntent.putExtra("respostas", listaRespostas);
+
 
         if (tipo == 3)
         {

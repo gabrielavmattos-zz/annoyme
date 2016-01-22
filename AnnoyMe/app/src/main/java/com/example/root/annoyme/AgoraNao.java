@@ -9,7 +9,6 @@ import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -19,28 +18,32 @@ import java.util.ArrayList;
  */
 public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.NoticeDialogListener{
 
-    private String date;
+    private ArrayList<String> listaRespostas;
     private Double longitude, latitude;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         System.out.println("aqui");
-        date = getIntent().getStringExtra("hora");
+        listaRespostas = getIntent().getStringArrayListExtra("respostas");
+        System.out.println(listaRespostas);
         latitude = getIntent().getDoubleExtra("latitude", 0);
         longitude = getIntent().getDoubleExtra("longitude",0);
-        System.out.println("Agora nao " + date);
         System.out.println("Agora nao " + latitude);
         System.out.println("Agora nao " + longitude);
 
+        System.out.println("Agora nao " + listaRespostas.get(0));
       //  setContentView(R.layout.main);
                 showNoticeDialog();
+
+
+
      }
 
     public void showNoticeDialog() {
         // Create an instance of the dialog fragment and show it
         Bundle args = new Bundle();
-        args.putString("hora", date);
+        args.putStringArrayList("resposta", listaRespostas);
         args.putDouble("latitude", latitude);
         args.putDouble("longitude", longitude);
 

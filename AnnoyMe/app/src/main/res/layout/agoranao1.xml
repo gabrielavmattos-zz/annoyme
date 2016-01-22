@@ -49,8 +49,11 @@
 
                 <TextView
                     style="@style/fontAnswer"
+                    android:id="@+id/agoraNao1_horario"
                     android:text="Horário"
                     android:layout_marginLeft="100dp" />
+
+
 
             </LinearLayout>
 
