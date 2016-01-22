@@ -33,6 +33,8 @@ public class Dados {
                     System.out.println("Criado.");
                 }
             }
+            else
+                System.out.println("Tem diretorio " + diretorio.getAbsolutePath());
         } else {
             alert = new AlertDialog.Builder(context);
             alert.setTitle("ERRO");
@@ -46,7 +48,7 @@ public class Dados {
     {
         FileOutputStream data;
         try {
-            data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+"_"+listaRespostas.get(0)+".csv");
+            data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+"_"+listaRespostas.get(listaRespostas.size()-1)+".csv");
 
             for( int i = 0; i < listaRespostas.size(); i++)
             {

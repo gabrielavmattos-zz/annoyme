@@ -43,8 +43,9 @@ public class AgoraNao1 extends AppCompatActivity implements OnMapReadyCallback{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.agoranao1);
-        dados = new Dados();
         context = this;
+
+        dados = new Dados(context);
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
