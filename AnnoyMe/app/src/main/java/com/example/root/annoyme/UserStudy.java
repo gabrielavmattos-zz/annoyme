@@ -13,36 +13,29 @@ import java.util.ArrayList;
  */
 public class UserStudy extends AppCompatActivity implements NoticeDialogFragment_UserStudy.NoticeDialogListener {
 
-    private   ArrayList<String> listaRespostas;
+    private String date;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         //System.out.println("aqui-user");
+        date = "";
 
-      listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
-        System.out.println("aqui-user: " + listaRespostas.get(0));
+        date = getIntent().getStringExtra("hora");
+
+        //System.out.println("aqui-user" + date);
 
         //  setContentView(R.layout.main);
-        showNoticeDialog();
+        showNoticeDialog(date);
     }
 
 
 
-    public void showNoticeDialog() {
-
-        Bundle args = new Bundle();
-        args.putStringArrayList("resposta", listaRespostas);
-        System.out.println("aqui1");
+    public void showNoticeDialog(String date) {
         // Create an instance of the dialog fragment and show it
         DialogFragment dialog = new NoticeDialogFragment_UserStudy();
-
-
-        dialog.setArguments(args);
-        System.out.println(dialog.getArguments());
         dialog.show(this.getFragmentManager(), "NoticeDialogFragment");
-        this.getSupportFragmentManager().executePendingTransactions();
     }
 
 

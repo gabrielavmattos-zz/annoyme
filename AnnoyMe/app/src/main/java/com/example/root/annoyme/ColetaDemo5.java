@@ -39,14 +39,14 @@ public class ColetaDemo5 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo5);
 
-        context = this;
-        dados = new Dados(context);
+        dados = new Dados();
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
         /********** Salvar as informações **********/
         btnAvancar = (Button) findViewById(R.id.button_coletademo5);
 
+        context = this;
 
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override

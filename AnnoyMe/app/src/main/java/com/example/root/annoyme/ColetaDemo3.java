@@ -37,8 +37,8 @@ public class ColetaDemo3 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo3);
 
+        dados = new Dados();
         context = this;
-        dados = new Dados(context);
 
 
         createCheckListP1();
@@ -62,7 +62,7 @@ public class ColetaDemo3 extends AppCompatActivity
                     checkBox = (CheckBox) findViewById(i);
                     if (checkBox.isChecked())
                     {
-                        System.out.println(checkBox.getText());
+                        //System.out.println(checkBox.getText());
                         text += (String) checkBox.getText() + '/';
                         status = true;
 

@@ -4,8 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import java.util.ArrayList;
-
 /**
  * Created by Gabriela.
  */
@@ -18,28 +16,25 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        ArrayList<String> listaRespostas = new ArrayList<String>();
+
 
         if (intent.getExtras() != null)
         {
             tipo = intent.getIntExtra("tipo", 0);
-
-            listaRespostas = intent.getStringArrayListExtra("respostas");
-            System.out.println(tipo);
+            date = intent.getStringExtra("hora");
+            //System.out.println(tipo);
             if(tipo == 3)
             {
                 latitude = intent.getDoubleExtra("latitude", 0);
                 longitude = intent.getDoubleExtra("longitude", 0);
             }
         }
-        else {
+        else
             tipo = 0; // tipo de interrupção informando participação no estudo
 
-            listaRespostas.add("0");
-        }
         intent1 = new Intent(context, BackgroundService.class);
         intent1.putExtra("tipo", tipo);
-        intent1.putExtra("respostas", listaRespostas);
+        intent1.putExtra("hora", date);
 
 
         if(tipo == 3)
@@ -48,8 +43,8 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             intent1.putExtra("longitude", longitude);
         }
 
-        System.out.println("1 "+listaRespostas.get(0));
-        System.out.println("1 "+longitude);
+        //System.out.println("1 "+date);
+        //System.out.println("1 "+longitude);
         System.out.println("1 "+latitude);
 
         context.startService(intent1);

@@ -12,7 +12,6 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -26,7 +25,6 @@ public class BackgroundService extends Service {
     private int tipo;
     private String date;
     private Double latitude, longitude;
-    private ArrayList<String> listaRespostas;
 
     private final IBinder mBinder = new LocalBinder();
 
@@ -63,8 +61,7 @@ public class BackgroundService extends Service {
 
         if(intent != null) {
             tipo = intent.getIntExtra("tipo", 0);
-            listaRespostas = intent.getStringArrayListExtra("respostas");
-
+            date = intent.getStringExtra("hora");
             if(tipo == 3)
             {
                 latitude = intent.getDoubleExtra("latitude", 0);
@@ -76,7 +73,7 @@ public class BackgroundService extends Service {
         }
 
 
-            System.out.println(tipo);
+        //System.out.println(tipo);
 
         switch (tipo)
         {
@@ -103,7 +100,8 @@ public class BackgroundService extends Service {
     private void showNotificationColetaPerso() {
 
         Intent coletaperso = new Intent(this, ColetaPerso1.class);
-        coletaperso.putExtra("respostas", listaRespostas);
+        coletaperso.putExtra("hora", date);
+
 
         // The PendingIntent to launch our activity if the user selects this notification
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,coletaperso, 0);
@@ -128,7 +126,7 @@ public class BackgroundService extends Service {
 
 
         Intent coletademo = new Intent(this, ColetaDemo1.class);
-        coletademo.putExtra("respostas", listaRespostas);
+        coletademo.putExtra("hora", date);
 
         // The PendingIntent to launch our activity if the user selects this notification
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, coletademo, 0);
@@ -185,19 +183,20 @@ public class BackgroundService extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
 
-        System.out.println("2 " + listaRespostas.get(0));
+        //System.out.println("2 " + date);
 
         Intent agoraNao = new Intent(this, AgoraNao.class);
-        agoraNao.putExtra("respostas", listaRespostas);
+        agoraNao.putExtra("hora", date);
         agoraNao.putExtra("latitude", latitude);
         agoraNao.putExtra("longitude", longitude);
         PendingIntent piAgoraNao = PendingIntent.getActivity(this, 0, agoraNao, 0);
 
         Intent userStudy = new Intent(this, UserStudy.class);
-        userStudy.putExtra("respostas", listaRespostas);
+        userStudy.putExtra("hora", date);
         PendingIntent piUserStudy = PendingIntent.getActivity(this, 0, userStudy, 0);
 
 
+        //System.out.println("2 " + date);
         // Set the info for the views that show in the notification panel.
         Notification notification = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_launcher)  // the status icon

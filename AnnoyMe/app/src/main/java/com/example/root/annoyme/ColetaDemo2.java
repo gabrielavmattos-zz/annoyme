@@ -37,8 +37,8 @@ public class ColetaDemo2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo2);
 
+        dados = new Dados();
         context = this;
-        dados = new Dados(context);
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 

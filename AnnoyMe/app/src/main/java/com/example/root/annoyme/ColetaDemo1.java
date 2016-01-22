@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -35,6 +34,7 @@ public class ColetaDemo1 extends AppCompatActivity {
     private boolean status, status2;
     private Context context;
     private Dados dados;
+    private String date;
     private ArrayList<String> listaRespostas;
 
     @Override
@@ -44,11 +44,12 @@ public class ColetaDemo1 extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo1);
-        listaRespostas = getIntent().getStringArrayListExtra("respostas");
+        listaRespostas = new ArrayList<String>();
 
+        dados = new Dados();
         context = this;
-        dados = new Dados(context);
-
+        date = getIntent().getStringExtra("hora");
+        listaRespostas.add(date);
         createRadioButtonP3();
         createRadioButtonP5();
 

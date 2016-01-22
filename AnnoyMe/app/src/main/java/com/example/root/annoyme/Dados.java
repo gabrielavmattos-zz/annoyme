@@ -1,8 +1,10 @@
 package com.example.root.annoyme;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Environment;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -11,36 +13,43 @@ import java.util.ArrayList;
  * Created by gabriela on 22/01/16.
  */
 public class Dados {
-    private AlertDialog.Builder alert;
-    private File diretorio;
 
-    public Dados(Context context) {
+    private File diretorio = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "/annoyme");
+
+    public boolean ArmazenamentoDisponivel(Activity activity) {
+
         String estado = Environment.getExternalStorageState();
+        AlertDialog.Builder alert;
+
 
         if (Environment.MEDIA_MOUNTED.equals(estado)) {
             // Leitura e Escrita Disponível
             System.out.println("R/W: " + Environment.getExternalStorageDirectory());
-
-            diretorio = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "/annoyme");
-            boolean criou = false;
-
-            if(!diretorio.exists())
-            {
-                System.out.println("Nao tem diretorio " + diretorio.getAbsolutePath());
-                criou = diretorio.mkdir();
-                if (!criou) System.out.println("Não criou.");
-                else {
-                    System.out.println("Criado.");
-                }
-            }
-            else
-                System.out.println("Tem diretorio " + diretorio.getAbsolutePath());
+            return true;
         } else {
-            alert = new AlertDialog.Builder(context);
+            alert = new AlertDialog.Builder(activity);
             alert.setTitle("ERRO");
             alert.setPositiveButton("Ok", null);
             alert.setMessage("Não será possível salvar suas respostas. Entre em contato, por favor.");
             alert.create().show();
+            return false;
+        }
+    }
+
+    public boolean criarDiretorio() {
+        if(!diretorio.exists()){
+            if (!(diretorio.mkdir() || diretorio.isDirectory())) {
+                System.out.println("Não criou.");
+                return false;
+            }
+            else {
+                System.out.println("Criado.");
+                return true;
+            }
+        }
+        else {
+            System.out.println("Diretorio ja existia.");
+            return true;
         }
     }
 
@@ -48,7 +57,7 @@ public class Dados {
     {
         FileOutputStream data;
         try {
-            data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+"_"+listaRespostas.get(listaRespostas.size()-1)+".csv");
+						data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+"_"+listaRespostas.get(listaRespostas.size()-1)+".csv");
 
             for( int i = 0; i < listaRespostas.size(); i++)
             {

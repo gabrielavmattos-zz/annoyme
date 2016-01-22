@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class NoticeDialogFragment extends DialogFragment {
 
     private ArrayList mSelectedItems;
-    private ArrayList<String> listaRespostas;
+    private String date;
     private Double longitude, latitude;
 
     /* The activity that creates an instance of this dialog fragment must
@@ -33,21 +33,14 @@ public class NoticeDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
       //  getActivity()
-
-
-        System.out.println("aqui2");
-
-        listaRespostas = getActivity().getIntent().getStringArrayListExtra("respostas");
-        System.out.println("hora certa: "+ listaRespostas.get(0));
-        latitude = getActivity().getIntent().getDoubleExtra("latitude", 0);
+        date = getArguments().getString("hora");
+        //System.out.println("hora certa: "+ date);
+        latitude = getActivity().getIntent().getDoubleExtra("latitude",0);
         longitude = getActivity().getIntent().getDoubleExtra("longitude", 0);
 
         mSelectedItems = new ArrayList();  // Where we track the selected items
-        System.out.println(longitude);
 
-        System.out.println(latitude);
-
-        System.out.println("aqui "+  getActivity().getIntent().getDoubleExtra("latitude",0));
+        //System.out.println("aqui "+  getActivity().getIntent().getDoubleExtra("latitude",0));
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(getText(R.string.userStudy_agoraNao_p))
                 .setMultiChoiceItems(R.array.userStudy_agoraNao_r, null,
@@ -67,18 +60,24 @@ public class NoticeDialogFragment extends DialogFragment {
                 .setPositiveButton(R.string.button_enviar, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Send the positive button event b
+                        ArrayList<String> respostasUser = new ArrayList<String>();
+                        respostasUser.add(date);
 
-                        System.out.println(longitude);
+                        //System.out.println(longitude);
 
-                        System.out.println(latitude);
-                        listaRespostas.add(String.valueOf(latitude));
-                        listaRespostas.add(String.valueOf(longitude));
+                        //System.out.println(latitude);
+                        respostasUser.add(String.valueOf(latitude));
+                        respostasUser.add(String.valueOf(longitude));
+                        //System.out.println(date);
 
+                        //System.out.println(longitude);
+
+                        //System.out.println(latitude);
 
                         final String[] answers = getResources().getStringArray(R.array.userStudy_agoraNao_r);
                         for (int i = 0; i < mSelectedItems.size(); i++) {
-                            System.out.println(answers[((int) mSelectedItems.get(i))]);
-                            listaRespostas.add(answers[((int) mSelectedItems.get(i))]);
+                            //System.out.println(answers[((int) mSelectedItems.get(i))]);
+                            respostasUser.add(answers[((int) mSelectedItems.get(i))]);
 
                         }
 
@@ -87,7 +86,7 @@ public class NoticeDialogFragment extends DialogFragment {
                         Intent nextActivity = new Intent(getActivity(), AgoraNao1.class);
 
                         //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-                        nextActivity.putStringArrayListExtra("respostas", listaRespostas);
+                        nextActivity.putStringArrayListExtra("respostas", respostasUser);
                         startActivity(nextActivity);
 
 

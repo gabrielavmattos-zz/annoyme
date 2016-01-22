@@ -41,12 +41,14 @@ public class ColetaPerso1 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletaperso1);
 
-        context = this;
-        dados = new Dados(context);
+        dados = new Dados();
         cenario = new Cenario();
 
-        listaRespostas = getIntent().getStringArrayListExtra("respostas");
+        context = this;
+        date = getIntent().getStringExtra("hora");
+        listaRespostas = new ArrayList<String>();
 
+        listaRespostas.add(date);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_perso1);
         final String[] answers = getResources().getStringArray(R.array.coletaPerso1_p1_r);

@@ -1,9 +1,7 @@
 package com.example.root.annoyme;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -59,18 +57,14 @@ public class MainActivity extends Activity {
 
     private void setAlarme(Calendar calendar, int tipo, int id) {
 
-        System.out.println(Calendar.getInstance().getTime());
+        //System.out.println(Calendar.getInstance().getTime());
 
         SimpleDateFormat simpleFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm");
         String date = simpleFormat.format(calendar.getTimeInMillis());
 
-        ArrayList<String> listaRespostas = new ArrayList<String>();
-        listaRespostas.add(date);
-
         Intent myIntent = new Intent(MainActivity.this, MyBroadcastReceiver.class);
         myIntent.putExtra("tipo", tipo);
-        myIntent.putExtra("respostas", listaRespostas);
-
+        myIntent.putExtra("hora", date);
 
         if (tipo == 3)
         {
@@ -79,7 +73,7 @@ public class MainActivity extends Activity {
             if (gps.canGetLocation()) {
                 latitude = gps.getLatitude();
                 longitude = gps.getLongitude();
-                System.out.println(date + " - " + latitude + " - " + longitude);
+                //System.out.println(date + " - " + latitude + " - " + longitude);
                 myIntent.putExtra("latitude", latitude);
                 myIntent.putExtra("longitude", longitude);
                 Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
@@ -95,7 +89,7 @@ public class MainActivity extends Activity {
 
         }
         pendingIntent = PendingIntent.getBroadcast(MainActivity.this, id, myIntent, 0);
-        System.out.println(date);
+        //System.out.println(date);
 
         // if (calendar.getTimeInMillis() - System.currentTimeMillis() >= 0) {
 

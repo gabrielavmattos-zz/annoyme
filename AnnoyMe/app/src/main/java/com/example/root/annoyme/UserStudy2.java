@@ -1,9 +1,13 @@
 package com.example.root.annoyme;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +15,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-
-import java.io.File;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,13 +36,34 @@ public class UserStudy2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        dados = new Dados();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userstudy2);
 
         context = this;
-        dados = new Dados(context);
+
+        if (dados.ArmazenamentoDisponivel(this)) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                System.out.println("Permissão dada");
+                // Should we show an explanation?
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    System.out.println("Deve explicar o racionale");
+                    // Show an expanation to the user *asynchronously* -- don't block
+                    // this thread waiting for the user's response! After the user
+                    // sees the explanation, try again to request the permission.
+                } else {
+                    // No explanation needed, we can request the permission.
+                    System.out.println("Deve só pedir permissão");
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                    // 1 is an app-defined int constant. The callback method gets the
+                    // result of the request.
+                }
+            }
+            else {
+                System.out.println("Permissão dada");
+            }
+        }
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
@@ -241,8 +262,6 @@ public class UserStudy2 extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public void onBackPressed() {
 
@@ -260,5 +279,23 @@ public class UserStudy2 extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    System.out.println("Permission Granted!");
+                    dados.criarDiretorio();
+                } else {
+                    System.out.println("Não será possível salvar suas respostas. Entre em contato, por favor.");
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
 
 }
