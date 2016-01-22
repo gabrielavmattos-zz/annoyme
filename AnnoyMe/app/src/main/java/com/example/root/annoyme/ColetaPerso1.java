@@ -41,10 +41,10 @@ public class ColetaPerso1 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletaperso1);
 
-        dados = new Dados();
+        context = this;
+        dados = new Dados(context);
         cenario = new Cenario();
 
-        context = this;
         date = getIntent().getStringExtra("hora");
         listaRespostas = new ArrayList<String>();
 
