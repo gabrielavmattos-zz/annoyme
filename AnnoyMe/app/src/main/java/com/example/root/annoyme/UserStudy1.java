@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.content.Context;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -21,6 +22,8 @@ public class UserStudy1 extends AppCompatActivity {
     private ArrayList<String> listaRespostas;
     private Button btnAvancar;
     private RadioGroup radioGroup;
+    private Dados dados;
+    private Context context;
     private RadioButton radioButton;
     private CheckBox checkBox;
 
@@ -31,6 +34,8 @@ public class UserStudy1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userstudy1);
 
+        context = this;
+        dados = new Dados(context);
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 

@@ -62,7 +62,9 @@ public class AgoraNao1 extends AppCompatActivity implements OnMapReadyCallback{
 
         horario = listaRespostas.get(0).substring(listaRespostas.get(0).indexOf("_")+1);
         System.out.println(horario);
+        horario = horario.replace("-","h");
 
+        text.setText(horario);
 
         /********** Salvar as informações **********/
         btnEnviar = (Button) findViewById(R.id.button_agoraNao1);

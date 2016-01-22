@@ -572,7 +572,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/home/gabriela/Dropbox/annoyme/AnnoyMe/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="userStudy_agoraNao">Você não pode responder uma das interrupções. Por quê?</string>
+    <string name="userStudy_agoraNao">Você não pode responder uma das interrupções. Poderia elaborar um motivo?</string>
     <string name="userStudy_agoraNao_label">Você estava aqui: </string>
     <string name="userStudy_agoraNao_p">Você pode nos dizer o por quê de não poder participar do estudo?</string>
     <string name="userStudy_interrupcao_label">Alguém quer acesso ao seu dado para motivo. Eu tenho certeza da permissão que você daria.</string>

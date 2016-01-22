@@ -36,12 +36,13 @@ public class UserStudy2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        dados = new Dados();
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userstudy2);
 
         context = this;
+        dados = new Dados(context);
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 

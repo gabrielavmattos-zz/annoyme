@@ -46,8 +46,9 @@ public class ColetaDemo1 extends AppCompatActivity {
         setContentView(R.layout.coletademo1);
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
-        dados = new Dados();
         context = this;
+        dados = new Dados(context);
+
         createRadioButtonP3();
         createRadioButtonP5();
 

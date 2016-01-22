@@ -34,8 +34,9 @@ public class ColetaDemo4 extends AppCompatActivity
         setContentView(R.layout.coletademo4);
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
-        dados = new Dados();
+
         context = this;
+        dados = new Dados(context);
 
 
         /********** Salvar as informações **********/
