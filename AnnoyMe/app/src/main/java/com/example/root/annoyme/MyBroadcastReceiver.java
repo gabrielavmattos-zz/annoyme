@@ -42,6 +42,11 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             intent1.putExtra("latitude", latitude);
             intent1.putExtra("longitude", longitude);
         }
+
+        System.out.println("1 "+date);
+        System.out.println("1 "+longitude);
+        System.out.println("1 "+latitude);
+
         context.startService(intent1);
 
 

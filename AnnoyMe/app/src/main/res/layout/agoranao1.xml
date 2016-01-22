@@ -31,11 +31,11 @@
 
                 <EditText
                     android:layout_width="fill_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="150dp"
                     android:id="@+id/agoraNao_text"
                     android:inputType="textMultiLine"
-                    android:maxLines="10"
-                    android:maxLength="10" />
+                    android:background="@drawable/background_button_rectangle"
+                    android:layout_margin="5dp" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -57,7 +57,7 @@
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/map"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     class="com.google.android.gms.maps.SupportMapFragment" />
 
 

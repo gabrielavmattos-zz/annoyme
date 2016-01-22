@@ -19,10 +19,12 @@ public class UserStudy extends AppCompatActivity implements NoticeDialogFragment
 
         super.onCreate(savedInstanceState);
         System.out.println("aqui-user");
-
+        date = "";
 
 
         date = getIntent().getStringExtra("hora");
+
+        System.out.println("aqui-user" + date);
 
         //  setContentView(R.layout.main);
         showNoticeDialog(date);

@@ -20,17 +20,18 @@ import java.util.ArrayList;
 public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.NoticeDialogListener{
 
     private String date;
-    private Double latitude, longitude;
+    private Double longitude, latitude;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         System.out.println("aqui");
-
         date = getIntent().getStringExtra("hora");
-        latitude = getIntent().getDoubleExtra("latitude",0);
-        longitude = getIntent().getDoubleExtra("longitude", 0);
-
+        latitude = getIntent().getDoubleExtra("latitude", 0);
+        longitude = getIntent().getDoubleExtra("longitude",0);
+        System.out.println("Agora nao " + date);
+        System.out.println("Agora nao " + latitude);
+        System.out.println("Agora nao " + longitude);
 
       //  setContentView(R.layout.main);
                 showNoticeDialog();
@@ -38,14 +39,23 @@ public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.
 
     public void showNoticeDialog() {
         // Create an instance of the dialog fragment and show it
+        Bundle args = new Bundle();
+        args.putString("hora", date);
+        args.putDouble("latitude", latitude);
+        args.putDouble("longitude", longitude);
+
         DialogFragment dialog = new NoticeDialogFragment();
-        dialog.show(this.getFragmentManager(), "NoticeDialogFragment");
+        dialog.setArguments(args);
+        dialog.show(AgoraNao.this.getFragmentManager(), "NoticeDialogFragment");
+
+
+       AgoraNao.this.getSupportFragmentManager().executePendingTransactions();
     }
 
     // The dialog fragment receives a reference to this Activity through the
     // Fragment.onAttach() callback, which it uses to call the following methods
     // defined by the NoticeDialogFragment.NoticeDialogListener interface
-    @Override
+    /*@Override
     public void onDialogPositiveClick(DialogFragment dialog, ArrayList listRespostas) {
         // User touched the dialog's positive button
         ArrayList<String> respostasUser = new ArrayList<String>();
@@ -60,7 +70,7 @@ public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.
 
         }
 
-        programarAgoraNao();
+    ///    programarAgoraNao();
 
         Intent nextActivity = new Intent(AgoraNao.this, AgoraNao1.class);
 
@@ -68,7 +78,7 @@ public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.
         nextActivity.putStringArrayListExtra("respostas", respostasUser);
         startActivity(nextActivity);
 
-    }
+    }*/
 
     private void programarAgoraNao()
     {

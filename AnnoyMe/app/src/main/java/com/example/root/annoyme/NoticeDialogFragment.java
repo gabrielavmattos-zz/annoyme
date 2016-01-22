@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -15,12 +16,14 @@ import java.util.ArrayList;
 public class NoticeDialogFragment extends DialogFragment {
 
     private ArrayList mSelectedItems;
+    private String date;
+    private Double longitude, latitude;
 
     /* The activity that creates an instance of this dialog fragment must
      * implement this interface in order to receive event callbacks.
      * Each method passes the DialogFragment in case the host needs to query it. */
     public interface NoticeDialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog, ArrayList mSelectedItems);
+      //  public void onDialogPositiveClick(DialogFragment dialog, ArrayList mSelectedItems);
     }
 
     // Use this instance of the interface to deliver action events
@@ -28,9 +31,16 @@ public class NoticeDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+      //  getActivity()
+        date = getArguments().getString("hora");
+        System.out.println("hora certa: "+ date);
+        latitude = getActivity().getIntent().getDoubleExtra("latitude",0);
+        longitude = getActivity().getIntent().getDoubleExtra("longitude", 0);
+
         mSelectedItems = new ArrayList();  // Where we track the selected items
 
-        System.out.println("aqui");
+        System.out.println("aqui "+  getActivity().getIntent().getDoubleExtra("latitude",0));
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(getText(R.string.userStudy_agoraNao_p))
                 .setMultiChoiceItems(R.array.userStudy_agoraNao_r, null,
@@ -49,8 +59,37 @@ public class NoticeDialogFragment extends DialogFragment {
                 })
                 .setPositiveButton(R.string.button_enviar, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // Send the positive button event back to the host activity
-                        mListener.onDialogPositiveClick(NoticeDialogFragment.this, mSelectedItems);
+                        // Send the positive button event b
+                        ArrayList<String> respostasUser = new ArrayList<String>();
+                        respostasUser.add(date);
+
+                        System.out.println(longitude);
+
+                        System.out.println(latitude);
+                        respostasUser.add(String.valueOf(latitude));
+                        respostasUser.add(String.valueOf(longitude));
+                        System.out.println(date);
+
+                        System.out.println(longitude);
+
+                        System.out.println(latitude);
+
+                        final String[] answers = getResources().getStringArray(R.array.userStudy_agoraNao_r);
+                        for (int i = 0; i < mSelectedItems.size(); i++) {
+                            System.out.println(answers[((int) mSelectedItems.get(i))]);
+                            respostasUser.add(answers[((int) mSelectedItems.get(i))]);
+
+                        }
+
+                        ///    programarAgoraNao();
+
+                        Intent nextActivity = new Intent(getActivity(), AgoraNao1.class);
+
+                        //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);
+                        nextActivity.putStringArrayListExtra("respostas", respostasUser);
+                        startActivity(nextActivity);
+
+
                     }
                 });
         return builder.create();

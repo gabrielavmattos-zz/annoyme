@@ -87,7 +87,7 @@ public class BackgroundService extends Service {
                 showNotificationColetaPerso();
                 break;
             case 3:
-                showNotification(date);
+                showNotification(date, latitude, longitude);
                 break;
 
 
@@ -174,7 +174,7 @@ public class BackgroundService extends Service {
     }
 
 
-    private void showNotification(String date)
+    private void showNotification(String date, Double latitude, Double longitude)
     {
 
 
@@ -183,20 +183,20 @@ public class BackgroundService extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
 
+        System.out.println("2 " + date);
+
         Intent agoraNao = new Intent(this, AgoraNao.class);
         agoraNao.putExtra("hora", date);
         agoraNao.putExtra("latitude", latitude);
         agoraNao.putExtra("longitude", longitude);
-
         PendingIntent piAgoraNao = PendingIntent.getActivity(this, 0, agoraNao, 0);
 
         Intent userStudy = new Intent(this, UserStudy.class);
         userStudy.putExtra("hora", date);
-        agoraNao.putExtra("latitude", latitude);
-        agoraNao.putExtra("longitude", longitude);
         PendingIntent piUserStudy = PendingIntent.getActivity(this, 0, userStudy, 0);
 
 
+        System.out.println("2 " + date);
         // Set the info for the views that show in the notification panel.
         Notification notification = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_launcher)  // the status icon

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra de etapas -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:layout_gravity="center"
+        android:foregroundGravity="center">
+
+        <TextView
+            style="@style/fontTitle"
+            android:id="@+id/coletaPerso_title" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- Inicio das perguntas -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/fontQuestion"
+                    android:text="@string/coletaPerso1_p1"/>
+  		
+                <LinearLayout
+                    android:id="@+id/layout_perso1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        style="@style/fontAnswer"
+                        android:id="@+id/coletaPerso1_q"/>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:measureWithLargestChild="false"
+                        android:id="@+id/radioGroup_q1">
+
+                        <RadioButton
+                            style="@style/fontLabel"
+                            android:text="@string/coletaPerso_r1"/>
+                        <RadioButton
+                            style="@style/fontLabel"
+                            android:text="@string/coletaPerso_r2"/>
+
+                        <RadioButton
+                            style="@style/fontLabel"
+                            android:text="@string/coletaPerso_r3"/>
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_avancar"
+                    android:id="@+id/button_coletaperso1"
+                    android:layout_gravity="left|center_vertical"
+                    android:allowUndo="false"
+                    android:layout_marginLeft="225dp" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
+<!-- From: file:/home/gabriela/Dropbox/annoyme/AnnoyMe/app/src/main/res/layout/coletaperso1.xml -->

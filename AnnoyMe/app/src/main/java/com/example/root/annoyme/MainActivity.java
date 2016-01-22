@@ -65,7 +65,6 @@ public class MainActivity extends Activity {
         Intent myIntent = new Intent(MainActivity.this, MyBroadcastReceiver.class);
         myIntent.putExtra("tipo", tipo);
         myIntent.putExtra("hora", date);
-        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, id, myIntent, 0);
 
         if (tipo == 3)
         {
@@ -74,7 +73,7 @@ public class MainActivity extends Activity {
             if (gps.canGetLocation()) {
                 latitude = gps.getLatitude();
                 longitude = gps.getLongitude();
-                System.out.println("ansdja");
+                System.out.println(date + " - " + latitude + " - " + longitude);
                 myIntent.putExtra("latitude", latitude);
                 myIntent.putExtra("longitude", longitude);
                 Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
@@ -89,6 +88,7 @@ public class MainActivity extends Activity {
 
 
         }
+        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, id, myIntent, 0);
         System.out.println(date);
 
         // if (calendar.getTimeInMillis() - System.currentTimeMillis() >= 0) {
