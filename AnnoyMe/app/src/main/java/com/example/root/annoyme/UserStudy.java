@@ -13,62 +13,29 @@ import java.util.ArrayList;
  */
 public class UserStudy extends AppCompatActivity implements NoticeDialogFragment_UserStudy.NoticeDialogListener {
 
-
+    private String date;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         System.out.println("aqui-user");
 
+
+
+        date = getIntent().getStringExtra("hora");
+
         //  setContentView(R.layout.main);
-        showNoticeDialog();
+        showNoticeDialog(date);
     }
 
 
 
-    public void showNoticeDialog() {
+    public void showNoticeDialog(String date) {
         // Create an instance of the dialog fragment and show it
-        DialogFragment dialog = new NoticeDialogFragment();
+        DialogFragment dialog = new NoticeDialogFragment_UserStudy();
         dialog.show(this.getFragmentManager(), "NoticeDialogFragment");
     }
 
-
-    @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        // User touched the dialog's positive button
-
-        //SALVAR LOG
-
-        ArrayList<String> listaRespostas = new ArrayList<String>();
-
-//        Intent nextActivity = new Intent(UserStudy.this, UserStudy1.class);
-//        listaRespostas.add("QueroEscolher");
-//
-//     //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-//        nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-//        startActivity(nextActivity);
-
-      //  finish();
-
-
-
-    }
-
-    @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
-        // User touched the dialog's positive button
-
-
-        ArrayList<String> listaRespostas = new ArrayList<String>();
-
-        Intent nextActivity = new Intent(UserStudy.this, UserStudy1.class);
-        listaRespostas.add("QueroDelegar");
-
-        //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-        nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-        startActivity(nextActivity);
-
-    }
 
 
 

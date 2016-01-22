@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.intent.action.QUICKBOOT_POWERON" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -52,10 +55,11 @@
             android:name=".UserStudy2"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".AgoraNao"/>
+            android:name=".AgoraNao"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".AgoraNao1"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
 
         <service  android:name=".BackgroundService" />
         <receiver android:name=".MyBroadcastReceiver">
@@ -64,6 +68,11 @@
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA15uZrXDAqKq7Y9mBTbzp-p2Z0uciSVHU"/>
+
     </application>
 
 </manifest>

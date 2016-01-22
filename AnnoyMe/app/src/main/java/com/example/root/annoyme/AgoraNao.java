@@ -19,11 +19,18 @@ import java.util.ArrayList;
  */
 public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.NoticeDialogListener{
 
+    private String date;
+    private Double latitude, longitude;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         System.out.println("aqui");
+
+        date = getIntent().getStringExtra("hora");
+        latitude = getIntent().getDoubleExtra("latitude",0);
+        longitude = getIntent().getDoubleExtra("longitude", 0);
+
 
       //  setContentView(R.layout.main);
                 showNoticeDialog();
@@ -42,6 +49,10 @@ public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.
     public void onDialogPositiveClick(DialogFragment dialog, ArrayList listRespostas) {
         // User touched the dialog's positive button
         ArrayList<String> respostasUser = new ArrayList<String>();
+        respostasUser.add(date);
+        respostasUser.add(String.valueOf(latitude));
+        respostasUser.add(String.valueOf(longitude));
+
         final String[] answers = getResources().getStringArray(R.array.userStudy_agoraNao_r);
         for (int i = 0; i < listRespostas.size(); i++) {
             System.out.println(answers[((int) listRespostas.get(i))]);
@@ -50,6 +61,7 @@ public class AgoraNao extends AppCompatActivity implements NoticeDialogFragment.
         }
 
         programarAgoraNao();
+
         Intent nextActivity = new Intent(AgoraNao.this, AgoraNao1.class);
 
         //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);

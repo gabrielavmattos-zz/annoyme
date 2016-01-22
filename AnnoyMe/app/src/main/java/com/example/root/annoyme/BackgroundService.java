@@ -23,6 +23,8 @@ public class BackgroundService extends Service {
     private NotificationManager notificationManager;
     private int NOTIFICATION = R.string.userStudy_notificacao;
     private int tipo;
+    private String date;
+    private Double latitude, longitude;
 
     private final IBinder mBinder = new LocalBinder();
 
@@ -57,11 +59,17 @@ public class BackgroundService extends Service {
 
         notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
-        if(intent != null)
+        if(intent != null) {
             tipo = intent.getIntExtra("tipo", 0);
+            date = intent.getStringExtra("hora");
+            if(tipo == 3)
+            {
+                latitude = intent.getDoubleExtra("latitude", 0);
+                longitude = intent.getDoubleExtra("longitude", 0);
+            }
+        }
         else {
             tipo = 0;
-         //   showNotificacaoInicial();
         }
 
 
@@ -79,7 +87,7 @@ public class BackgroundService extends Service {
                 showNotificationColetaPerso();
                 break;
             case 3:
-                showNotification();
+                showNotification(date);
                 break;
 
 
@@ -91,9 +99,12 @@ public class BackgroundService extends Service {
 
     private void showNotificationColetaPerso() {
 
+        Intent coletaperso = new Intent(this, ColetaPerso1.class);
+        coletaperso.putExtra("hora", date);
+
+
         // The PendingIntent to launch our activity if the user selects this notification
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, ColetaPerso1.class), 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,coletaperso, 0);
 
         // Set the info for the views that show in the notification panel.
         Notification notification = new Notification.Builder(this)
@@ -114,9 +125,11 @@ public class BackgroundService extends Service {
     private void showNotificationColetaDemo() {
 
 
+        Intent coletademo = new Intent(this, ColetaDemo1.class);
+        coletademo.putExtra("hora", date);
+
         // The PendingIntent to launch our activity if the user selects this notification
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, ColetaDemo1.class), 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, coletademo, 0);
 
         // Set the info for the views that show in the notification panel.
         Notification notification = new Notification.Builder(this)
@@ -161,7 +174,7 @@ public class BackgroundService extends Service {
     }
 
 
-    private void showNotification()
+    private void showNotification(String date)
     {
 
 
@@ -170,11 +183,18 @@ public class BackgroundService extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
 
-        Intent dismissIntent = new Intent(this, AgoraNao.class);
-        PendingIntent piDismiss = PendingIntent.getActivity(this, 0, dismissIntent, 0);
+        Intent agoraNao = new Intent(this, AgoraNao.class);
+        agoraNao.putExtra("hora", date);
+        agoraNao.putExtra("latitude", latitude);
+        agoraNao.putExtra("longitude", longitude);
 
-        Intent snoozeIntent = new Intent(this, UserStudy.class);
-        PendingIntent piSnooze = PendingIntent.getActivity(this, 0, snoozeIntent, 0);
+        PendingIntent piAgoraNao = PendingIntent.getActivity(this, 0, agoraNao, 0);
+
+        Intent userStudy = new Intent(this, UserStudy.class);
+        userStudy.putExtra("hora", date);
+        agoraNao.putExtra("latitude", latitude);
+        agoraNao.putExtra("longitude", longitude);
+        PendingIntent piUserStudy = PendingIntent.getActivity(this, 0, userStudy, 0);
 
 
         // Set the info for the views that show in the notification panel.
@@ -184,14 +204,16 @@ public class BackgroundService extends Service {
                 .setContentTitle(getText(R.string.userStudy_notificacao))  // the label of the entry
                 .setContentText(text)  // the contents of the entry
                 .setAutoCancel(true)
+                .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setDefaults(Notification.DEFAULT_ALL)
-                .setContentIntent(piSnooze)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setContentIntent(piUserStudy)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(getText(R.string.notificacao_coletaDemo)))
                 .addAction(0,
-                        getString(R.string.userStudy_notificacao_r1), piDismiss)
+                        getString(R.string.userStudy_notificacao_r1), piAgoraNao)
                 .addAction(0,
-                        getString(R.string.userStudy_notificacao_r2), piSnooze)
+                        getString(R.string.userStudy_notificacao_r2), piUserStudy)
                 .build();
 
 

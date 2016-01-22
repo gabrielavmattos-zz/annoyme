@@ -57,7 +57,7 @@ public class NoticeDialogFragment extends DialogFragment {
     }
 
 
-
+/*
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
     @Override
     public void onAttach(Activity activity) {
@@ -73,6 +73,6 @@ public class NoticeDialogFragment extends DialogFragment {
 					+ " must implement NoticeDialogListener");
 		}
     }
-
+*/
 
 }

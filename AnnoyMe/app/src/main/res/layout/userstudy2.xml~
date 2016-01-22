@@ -26,72 +26,85 @@
 		 <TextView
                     style="@style/fontQuestion"
                     android:text="@string/userStudy_p5"/>
+        <com.example.root.annoyme.RadioButtonWithTableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-
-		<RadioGroup
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                >
+            <!--  <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:measureWithLargestChild="false"
-                        android:id="@+id/radioGroup_q5">
+                        android:id="@+id/radioGroup_q5"> -->
 
-			<LinearLayout
-		        android:orientation="horizontal"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content">
-		    <LinearLayout
-		        android:orientation="vertical"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content">
 
                         <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r1" />
 
 
+                <RadioButton
+                    style="@style/fontAnswer"
+                    android:text="@string/userStudy_p5_r6" />
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                >
+
                         <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r2" />
 
+            <RadioButton
+                style="@style/fontAnswer"
+                android:text="@string/userStudy_p5_r7" />
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                >
 
                         <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r3" />
 
 
-                        <RadioButton
+            <RadioButton
+                style="@style/fontAnswer"
+                android:text="@string/userStudy_p5_r8" />
+</TableRow>
+
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                >
+
+
+            <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r4" />
 
+            <RadioButton
+                style="@style/fontAnswer"
+                android:text="@string/userStudy_p5_r9" />
+        </TableRow>
 
-                        <RadioButton
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                >
+
+            <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r5" />
-
-
-                        <RadioButton
-                            style="@style/fontAnswer"
-			    android:text="@string/userStudy_p5_r6" />
-
-			</LinearLayout>
-
-			<LinearLayout
-		        android:orientation="vertical"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            style="@style/fontAnswer"
-			    android:text="@string/userStudy_p5_r7" />
-
-
-                        <RadioButton
-                            style="@style/fontAnswer"
-			    android:text="@string/userStudy_p5_r8" />
-
-
-                        <RadioButton
-                            style="@style/fontAnswer"
-			    android:text="@string/userStudy_p5_r9" />
 
 
                         <RadioButton
@@ -99,18 +112,36 @@
 			    android:text="@string/userStudy_p5_r10" />
 
 
+
+        </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+
+
+
+
                         <RadioButton
                             style="@style/fontAnswer"
 			    android:text="@string/userStudy_p5_r11" />
 
-
-			</LinearLayout>
-
-			</LinearLayout>
-
-                    </RadioGroup>
+        </TableRow>
+        </com.example.root.annoyme.RadioButtonWithTableLayout>
 
 
+           <!-- <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userStudy_p5_textOutros"
+                    android:singleLine="false"
+                    android:inputType="text"
+                    android:maxLines="1" />-->
 
 
                 <TextView
@@ -147,6 +178,11 @@
                                 style="@style/fontAnswer"
                                 android:text="@string/userStudy_p6_r4"
                                 android:id="@+id/checkbox_p6_r4"/>
+
+                            <CheckBox
+                                style="@style/fontAnswer"
+                                android:text="@string/userStudy_p6_r5"
+                                android:id="@+id/checkbox_p6_r5"/>
 
 
 
@@ -189,6 +225,11 @@
                         </LinearLayout>
 
 
+
+
+                    </LinearLayout>
+
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -201,17 +242,12 @@
                     <EditText
                         android:layout_width="225dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textOutros"
+                        android:id="@+id/userStudy_p6_textOutros"
                         android:singleLine="false"
                         android:inputType="text"
                         android:maxLines="1" />
 
                 </LinearLayout>
-
-
-                    </LinearLayout>
-
-                   
                 <Button
                     style="@style/button"
                     android:layout_width="112dp"

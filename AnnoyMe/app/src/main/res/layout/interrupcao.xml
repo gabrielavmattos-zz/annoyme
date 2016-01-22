@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        style="@style/fontQuestion"
+        android:id="@+id/interrupcao_cenario"
+        android:text="@string/userStudy_interrupcao_label"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+
+    <TextView
+        style="@style/fontAnswer"
+        android:text="@string/userStudy_interrupcao_p"
+        android:layout_margin="20dp" />
+
+</LinearLayout>

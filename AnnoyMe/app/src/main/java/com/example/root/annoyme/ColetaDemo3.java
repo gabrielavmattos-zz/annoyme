@@ -1,6 +1,7 @@
 package com.example.root.annoyme;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,12 +27,19 @@ public class ColetaDemo3 extends AppCompatActivity
     private Button btnAvancar;
     private RadioButton radioButton;
     private ArrayList<String> listaRespostas;
+    private Context context;
+    private Dados dados;
+    private boolean status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo3);
+
+        dados = new Dados();
+        context = this;
+
 
         createCheckListP1();
 
@@ -45,6 +53,7 @@ public class ColetaDemo3 extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
+                status = false;
                 String[] answers = getResources().getStringArray(R.array.coletaDemo3_p1_r);
                 String text = "";
                 for (int i = 0; i < answers.length; i++)
@@ -55,7 +64,7 @@ public class ColetaDemo3 extends AppCompatActivity
                     {
                         System.out.println(checkBox.getText());
                         text += (String) checkBox.getText() + '/';
-
+                        status = true;
 
                     }
                 }
@@ -64,27 +73,50 @@ public class ColetaDemo3 extends AppCompatActivity
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q2);
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q3);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q4);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
 
-                Intent nextActivity = new Intent(ColetaDemo3.this, ColetaDemo4.class);
-                nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-                startActivity(nextActivity);
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
 
-                finish();
+                if(status) {
+
+                    Intent nextActivity = new Intent(ColetaDemo3.this, ColetaDemo4.class);
+                    nextActivity.putStringArrayListExtra("respostas", listaRespostas);
+                    startActivity(nextActivity);
+
+                    finish();
+                }
+                else
+                {
+                    dados.exibeDialogo("Todas as questões devem ser respondida", context);
+                }
+
 
             }
         });

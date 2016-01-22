@@ -1,6 +1,7 @@
 package com.example.root.annoyme;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,12 +26,19 @@ public class ColetaDemo2 extends AppCompatActivity
     private RadioButton radioButton;
     private Button btnAvancar;
     private ArrayList<String> listaRespostas;
+    private Context context;
+    private Dados dados;
+    private boolean status;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo2);
+
+        dados = new Dados();
+        context = this;
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
@@ -42,49 +50,94 @@ public class ColetaDemo2 extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
+                status = true;
+                String text;
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q1);
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q2);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
+
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q3);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
+
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q4);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
+
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q5);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
+
 
                 radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q6);
                 selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                selectedId = radioGroup.indexOfChild(radioButton);
-                listaRespostas.add(Integer.toString(selectedId));
+                if(selectedId != -1) {
+
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    selectedId = radioGroup.indexOfChild(radioButton);
+                    listaRespostas.add(Integer.toString(selectedId));
+                }
+                else
+                    status = false;
+
+                if(status) {
+
+                    Intent nextActivity = new Intent(ColetaDemo2.this, ColetaDemo3.class);
+                    nextActivity.putStringArrayListExtra("respostas", listaRespostas);
+                    startActivity(nextActivity);
+
+                    finish();
+                }
+                else
+                {
+                    dados.exibeDialogo("Todas as questões devem ser respondida", context);
+                }
 
 
-                Intent nextActivity = new Intent(ColetaDemo2.this, ColetaDemo3.class);
-                nextActivity.putStringArrayListExtra("respostas", listaRespostas);
-                startActivity(nextActivity);
 
-                finish();
 
             }
         });
@@ -93,7 +146,6 @@ public class ColetaDemo2 extends AppCompatActivity
 
     }
 
-    /*CONFERIIIIIIIIIIIIIIR*/
 
     @Override
     public void onBackPressed() {

@@ -130,7 +130,7 @@
             <CheckBox
                 style="@style/fontAnswer"
                 android:text="@string/userStudy_p4_r3"
-                android:id="@+id/checkbox_p4"/>
+                android:id="@+id/checkbox_q4"/>
 
                 <Button
                     style="@style/button"

@@ -24,13 +24,16 @@ public class ColetaPerso1 extends AppCompatActivity
 
     private RadioButton radioButton;
     private int i=0;
+    private Dados dados;
     private TextView text, textTitle;
     private Button buttonProximo;
     private AlertDialog.Builder alert;
     private Context context;
-    private ArrayList<String> listaRespostas1;
+    private String date;
+    private ArrayList<String> listaRespostas;
     private  ArrayList<String> listaRespostas2;
     private  ArrayList<String> listaRespostas3;
+    private Cenario cenario;
 
 
     @Override
@@ -38,10 +41,14 @@ public class ColetaPerso1 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletaperso1);
 
+        dados = new Dados();
+        cenario = new Cenario();
+
         context = this;
-        listaRespostas1 = new ArrayList<String>();
-        listaRespostas2 = new ArrayList<String>();
-        listaRespostas3 = new ArrayList<String>();
+        date = getIntent().getStringExtra("hora");
+        listaRespostas = new ArrayList<String>();
+
+        listaRespostas.add(date);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_perso1);
         final String[] answers = getResources().getStringArray(R.array.coletaPerso1_p1_r);
@@ -72,31 +79,35 @@ public class ColetaPerso1 extends AppCompatActivity
                     selectedId = radioGroup.indexOfChild(radioButton);
                     radioGroup.clearCheck();
 
-                    if (selectedId == 0) {
-                        System.out.println(i);
 
-                        System.out.println(answers[i]);
-                        listaRespostas1.add(answers[i]);
+                    if (selectedId == -1) {
+
+                        dados.exibeDialogo("É necessário escolher pelo menos uma alternativa.", context);
+                    } else {
+
+                        if (selectedId == 0) {
+                            cenario.setNaoPreocupa(answers[i]);
+                            listaRespostas.add("0/"+answers[i]);
+                        } else if (selectedId == 1) {
+                            cenario.setNormal(answers[i]);
+                            listaRespostas.add("1/" + answers[i]);
+                        }
+                        else if (selectedId == 2) {
+                            cenario.setMePreocupo(answers[i]);
+                            listaRespostas.add("2/" + answers[i]);
+                        }
+
+                        if (i < answers.length - 1) {
+                            text.setText(answers[i + 1]);
+                        } else
+                            sair();
+
+                        if (i == answers.length - 2) {
+                            buttonProximo.setText(R.string.button_enviar);
+                        }
+                        i++;
+                        textTitle.setText("ETAPA " + (i + 1) + " DE " + answers.length);
                     }
-                    else if(selectedId == 1)
-                        listaRespostas2.add(answers[i]);
-                    else
-                        listaRespostas3.add(answers[i]);
-
-
-                    if (i < answers.length-1) {
-                        text.setText(answers[i + 1]);
-                    }
-                    else
-                        sair();
-
-                    if( i == answers.length - 2)
-                    {
-                        buttonProximo.setText(R.string.button_enviar);
-                    }
-                    i++;
-
-                    textTitle.setText("ETAPA "+(i+1)+" DE "+answers.length);
 
                 }
             });
@@ -107,15 +118,29 @@ public class ColetaPerso1 extends AppCompatActivity
 
     private void sair() {
 
+        if(dados.salvarDados(listaRespostas, "coletaPerso"))
+        {
 
-        alert = new AlertDialog.Builder(context);
-        alert.setTitle("Concluído.");
-        alert.setMessage("Questionário finalizado com sucesso!").setCancelable(false).setPositiveButton("Ok",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        finish();
-                    }
-                });
-        alert.create().show();
+            alert= new AlertDialog.Builder(context);
+            alert.setTitle("Concluído.");
+            alert.setMessage("Questionário finalizado com sucesso!").setCancelable(false).setPositiveButton("Ok",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    });
+            alert.create().show();
+
+        }
+        else
+        {
+
+            alert= new AlertDialog.Builder(context);
+            alert.setTitle("ERRO");
+            alert.setPositiveButton("Ok", null);
+            alert.setMessage("Erro em salvar o formulário.");
+            alert.create().show();
+
+        }
     }
 }

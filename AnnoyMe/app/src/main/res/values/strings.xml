@@ -295,6 +295,11 @@
 
     <string name="userStudy_notificacao_study">Você gostaria de ser interrompido para decidir se alguém terá acesso ao dado?</string>
 
+    <string name="userStudy_interrupcao_label">Alguém quer acesso ao seu dado para motivo. Eu tenho certeza da permissão que você daria.</string>
+    <string name="userStudy_interrupcao_p">Você prefere ser interrompido para escolher a permissão ou delegar essa escolha para mim e não ser interrompido?</string>
+    <string name="userStudy_interrupcao_r1">Quero escolher</string>
+    <string name="userStudy_interrupcao_r2">Quero delegar</string>
+
     <string name="userStudy_agoraNao_p">Você pode nos dizer o por quê de não poder participar do estudo?</string>
         <string-array name="userStudy_agoraNao_r">
             <item>A situação não permite</item>
