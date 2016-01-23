@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -234,10 +235,12 @@ public class UserStudy2 extends AppCompatActivity {
                         alert.setTitle("Concluído.");
                         alert.setMessage("Questionário finalizado com sucesso!").setCancelable(false).setPositiveButton("Ok",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
+                                    public void onClick(DialogInterface dialog, int id) {{
+                                        Intent nextActivity = new Intent(UserStudy2.this, MainActivity.class);
+                                        startActivity(nextActivity);
                                         finish();
                                     }
-                                });
+                                }});
                         alert.create().show();
 
                     } else {

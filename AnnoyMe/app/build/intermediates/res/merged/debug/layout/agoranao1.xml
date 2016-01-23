@@ -2,8 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
 
     <!-- Inicio das perguntas -->
@@ -12,7 +12,9 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="center">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -22,7 +24,8 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center">
 
                 <TextView
                     style="@style/fontQuestion"
@@ -47,11 +50,17 @@
                     style="@style/fontAnswer"
                     android:text="@string/userStudy_agoraNao_label"/>
 
+
+                <TextView
+                    style="@style/fontAnswer"
+                    android:text="Horário: "
+                    android:layout_marginLeft="90dp" />
+
                 <TextView
                     style="@style/fontAnswer"
                     android:id="@+id/agoraNao1_horario"
-                    android:text="Horário"
-                    android:layout_marginLeft="100dp" />
+                    android:text="00h00"
+                    android:layout_marginLeft="5dp" />
 
 
 
@@ -59,9 +68,10 @@
 
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/map"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="200dp"
-                    class="com.google.android.gms.maps.SupportMapFragment" />
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_margin="8dp" />
 
 
                 <Button

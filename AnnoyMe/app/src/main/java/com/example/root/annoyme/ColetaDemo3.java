@@ -37,9 +37,8 @@ public class ColetaDemo3 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletademo3);
 
-        dados = new Dados();
         context = this;
-
+        dados = new Dados();
 
         createCheckListP1();
 

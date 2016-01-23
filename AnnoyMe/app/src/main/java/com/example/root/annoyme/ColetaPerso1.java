@@ -33,22 +33,18 @@ public class ColetaPerso1 extends AppCompatActivity
     private ArrayList<String> listaRespostas;
     private  ArrayList<String> listaRespostas2;
     private  ArrayList<String> listaRespostas3;
-    private Cenario cenario;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coletaperso1);
 
-        dados = new Dados();
-        cenario = new Cenario();
 
         context = this;
-        date = getIntent().getStringExtra("hora");
-        listaRespostas = new ArrayList<String>();
+        dados = new Dados();
 
-        listaRespostas.add(date);
+        listaRespostas = getIntent().getStringArrayListExtra("respostas");
+
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_perso1);
         final String[] answers = getResources().getStringArray(R.array.coletaPerso1_p1_r);
@@ -69,48 +65,45 @@ public class ColetaPerso1 extends AppCompatActivity
                 sair();
 
             }*/
-            buttonProximo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        buttonProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q1);
-                    int selectedId = radioGroup.getCheckedRadioButtonId();
-                    radioButton = (RadioButton) findViewById(selectedId);
-                    selectedId = radioGroup.indexOfChild(radioButton);
-                    radioGroup.clearCheck();
+                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup_q1);
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                selectedId = radioGroup.indexOfChild(radioButton);
+                radioGroup.clearCheck();
 
 
-                    if (selectedId == -1) {
+                if (selectedId == -1) {
 
-                        dados.exibeDialogo("É necessário escolher pelo menos uma alternativa.", context);
-                    } else {
+                    dados.exibeDialogo("É necessário escolher pelo menos uma alternativa.", context);
+                } else {
 
-                        if (selectedId == 0) {
-                            cenario.setNaoPreocupa(answers[i]);
-                            listaRespostas.add("0/"+answers[i]);
-                        } else if (selectedId == 1) {
-                            cenario.setNormal(answers[i]);
-                            listaRespostas.add("1/" + answers[i]);
-                        }
-                        else if (selectedId == 2) {
-                            cenario.setMePreocupo(answers[i]);
-                            listaRespostas.add("2/" + answers[i]);
-                        }
-
-                        if (i < answers.length - 1) {
-                            text.setText(answers[i + 1]);
-                        } else
-                            sair();
-
-                        if (i == answers.length - 2) {
-                            buttonProximo.setText(R.string.button_enviar);
-                        }
-                        i++;
-                        textTitle.setText("ETAPA " + (i + 1) + " DE " + answers.length);
+                    if (selectedId == 0) {
+                        listaRespostas.add("0,"+answers[i]);
+                    } else if (selectedId == 1) {
+                        listaRespostas.add("1," + answers[i]);
+                    }
+                    else if (selectedId == 2) {
+                        listaRespostas.add("2," + answers[i]);
                     }
 
+                    if (i < answers.length - 1) {
+                        text.setText(answers[i + 1]);
+                    } else
+                        sair();
+
+                    if (i == answers.length - 2) {
+                        buttonProximo.setText(R.string.button_enviar);
+                    }
+                    i++;
+                    textTitle.setText("ETAPA " + (i + 1) + " DE " + answers.length);
                 }
-            });
+
+            }
+        });
 
 
 
