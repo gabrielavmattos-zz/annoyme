@@ -9,14 +9,11 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.RandomAccessFile;
-import java.nio.Buffer;
 import java.util.ArrayList;
 
 /**
@@ -28,10 +25,8 @@ public class Dados {
 
 
     public boolean ArmazenamentoDisponivel(Activity activity) {
-
         String estado = Environment.getExternalStorageState();
         AlertDialog.Builder alert;
-
 
         if (Environment.MEDIA_MOUNTED.equals(estado)) {
             // Leitura e Escrita Disponível
@@ -64,23 +59,18 @@ public class Dados {
         }
     }
 
-    public boolean salvarDados(ArrayList<String> listaRespostas, String label)
-    {
+    public boolean salvarDados(ArrayList<String> listaRespostas, String label) {
         FileOutputStream data;
         try {
             char separador = ',';
-            if(label.contains("coletaPerso"))
-            {
+            if(label.contains("coletaPerso")) {
                 data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+".csv");
                 separador = '\n';
-
             }
             else
-
                 data = new FileOutputStream(diretorio.getAbsolutePath()+"/"+label+"_"+listaRespostas.get(listaRespostas.size()-1)+".csv");
 
-            for( int i = 0; i < listaRespostas.size(); i++)
-            {
+            for( int i = 0; i < listaRespostas.size(); i++) {
                 //System.out.println(i+" - "+listaRespostas.get(i));
                 data.write((listaRespostas.get(i) + separador).getBytes());
             }
@@ -92,8 +82,7 @@ public class Dados {
         }
     }
 
-    public boolean salvarAgoraNao(ArrayList<String> listaRespostas)
-    {
+    public boolean salvarAgoraNao(ArrayList<String> listaRespostas) {
         BufferedWriter data;
         try {
             data = new BufferedWriter(new FileWriter(diretorio.getAbsolutePath()+"/agoraNao.csv", true));
@@ -112,110 +101,77 @@ public class Dados {
         }
     }
 
-    public ArrayList verificarArquivoPendentes(int tipo, ArrayList<String> lista)
-    {
-
-
+    public ArrayList verificarArquivoPendentes(int tipo, ArrayList<String> lista) {
         try {
             if(tipo == 0) {
-
-            InputStream in = new FileInputStream(diretorio.getAbsolutePath() + "/agoraNao.csv");
-            if(in == null)
-            {
+                if(new File(diretorio.getAbsolutePath() + "/agoraNao.csv").exists()) {
+                    InputStream in = new FileInputStream(diretorio.getAbsolutePath() + "/agoraNao.csv");
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                    ArrayList<String> line = new ArrayList<String>();
+                    String text = reader.readLine();;
+                    // read every line of the file into the line-variable, on line at the time
+                    do {
+                        System.out.println(text);
+                        line.add(text);
+                        text = reader.readLine();
+                        // do something with the line
+                    } while (text != null);
+                    reader.close();
+                    return line;
+                }
                 return null;
             }
             else {
-
-
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                    ArrayList<String> line = new ArrayList<String>();
-                    String text= reader.readLine();;
-                    // read every line of the file into the line-variable, on line at the time
-                    do {
-
-
-                        System.out.println(text);
-
-                        line.add(text);
-                        text = reader.readLine();
-
-                        // do something with the line
-                    } while (text != null);
-                reader.close();
-                return line;
-
-                }
-            }
-            else
-            {
                 File file = new File(diretorio.getAbsolutePath() + "/agoraNao.csv");
-                if(file.exists())
-                {
-                    System.out.println("aqui");
-                    file.delete();}
+                if(file.exists()) {
+                    //System.out.println("aqui");
+                    file.delete();
+                }
+
                 BufferedWriter data = new BufferedWriter(new FileWriter(diretorio.getAbsolutePath()+"/agoraNao.csv", true));
 
-                for( int i = 0; i < lista.size(); i++)
-                {
+                for( int i = 0; i < lista.size(); i++) {
                     //System.out.println(i+" - "+listaRespostas.get(i));
                     data.append(lista.get(i) + "\n");
                 }
 
                 data.close();
                 return null;
-
             }
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
-
     }
-
 
     public ArrayList lerCenarios()
     {
-
-
         try {
-                InputStream in = new FileInputStream(diretorio.getAbsolutePath() + "/coletaPerso.csv");
-                if(in == null)
-                {
-                    return null;
-                }
-                else {
+            InputStream in = new FileInputStream(diretorio.getAbsolutePath() + "/coletaPerso.csv");
+            if(in == null) {
+                return null;
+            }
+            else {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                ArrayList<String> line = new ArrayList<String>();
+                String text = reader.readLine();;
+                // read every line of the file into the line-variable, on line at the time
+                do {
+                    System.out.println(text);
+                    line.add(text);
+                    text = reader.readLine();
 
+                    // do something with the line
+                } while (text != null);
 
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                    ArrayList<String> line = new ArrayList<String>();
-                    String text= reader.readLine();;
-                    // read every line of the file into the line-variable, on line at the time
-                    do {
-
-
-                        System.out.println(text);
-
-                        line.add(text);
-                        text = reader.readLine();
-
-                        // do something with the line
-                    } while (text != null);
-                    reader.close();
-                    return line;
-
-                }
+                reader.close();
+                return line;
+            }
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
-
     }
-
 
     public void exibeDialogo(String mensagem, Context context) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);

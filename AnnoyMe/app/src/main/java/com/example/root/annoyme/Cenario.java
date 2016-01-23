@@ -30,11 +30,11 @@ public class Cenario {
         for (int i = 1; i<geral.size(); i++)
         {
             line = geral.get(i);
-            System.out.println(line);
+            //System.out.println(line);
             id = Integer.parseInt(line.substring(0,1));
-            System.out.println(id);
+            //System.out.println(id);
             cenario = line.substring(line.indexOf(',')+1);
-            System.out.println(cenario);
+            //System.out.println(cenario);
 
 
             if(id == 2)

@@ -48,28 +48,28 @@ public class AgoraNao1 extends AppCompatActivity implements OnMapReadyCallback{
         dados = new Dados();
         context = this;
         listaRespostas = new ArrayList<String>();
-        System.out.println(getIntent().getStringExtra("respostas"));
+        ////System.out.println(getIntent().getStringExtra("respostas"));
         resposta = getIntent().getStringExtra("respostas");
 
         respondidas = getIntent().getStringArrayListExtra("respondidas");
 
-        System.out.println(resposta);
-        System.out.println(resposta.indexOf("pendente,"));
+        ////System.out.println(resposta);
+        ////System.out.println(resposta.indexOf("pendente,"));
         resposta = resposta.replace("pendente,", "ok,");
         respondidas.add(resposta);
         resposta = resposta.replace("ok,", "");
 
-        System.out.println(resposta.indexOf('('));
-        System.out.println(resposta.indexOf(')'));
-        ll = resposta.substring(resposta.indexOf("(")+1, resposta.indexOf(")"));
-        System.out.println(ll);
+        ////System.out.println(resposta.indexOf('('));
+        ////System.out.println(resposta.indexOf(')'));
+        ll = resposta.substring(resposta.indexOf("(") + 1, resposta.indexOf(")"));
+        ////System.out.println(ll);
 
 
         latitude = Double.parseDouble(ll.substring(0, ll.indexOf(",")-1));
         longitude = Double.parseDouble(ll.substring(ll.indexOf(",")+1));
 
-        System.out.println(latitude);
-        System.out.println(longitude);
+        ////System.out.println(latitude);
+        ////System.out.println(longitude);
 
         resposta = resposta.replace("(,", "");
         resposta = resposta.replace("),", "");
@@ -87,13 +87,13 @@ public class AgoraNao1 extends AppCompatActivity implements OnMapReadyCallback{
 
         String horario;
 
-        System.out.println(listaRespostas.get(0));
-        System.out.println(listaRespostas.get(0).indexOf("_"));
-        System.out.println(listaRespostas.get(0).indexOf(","));
+        //System.out.println(listaRespostas.get(0));
+        //System.out.println(listaRespostas.get(0).indexOf("_"));
+        //System.out.println(listaRespostas.get(0).indexOf(","));
         horario = listaRespostas.get(0).substring(listaRespostas.get(0).indexOf("_") + 1, listaRespostas.get(0).indexOf(","));
         horario = horario.replace("-", "h");
         text.setText(horario);
-        System.out.println(horario);
+        //System.out.println(horario);
 
 
         /********** Salvar as informações **********/

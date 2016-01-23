@@ -76,7 +76,7 @@ public class BackgroundService extends Service {
         }
 
 
-        System.out.println(tipo);
+        //System.out.println(tipo);
 
         switch (tipo)
         {
@@ -185,7 +185,7 @@ public class BackgroundService extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
 
-        System.out.println("2 " + listaRespostas.get(0));
+        //System.out.println("2 " + listaRespostas.get(0));
 
         Intent agoraNao = new Intent(this, AgoraNao.class);
         agoraNao.putExtra("respostas", listaRespostas);

@@ -24,7 +24,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             tipo = intent.getIntExtra("tipo", 0);
 
             listaRespostas = intent.getStringArrayListExtra("respostas");
-            System.out.println(tipo);
+            //System.out.println(tipo);
             if(tipo == 3)
             {
              //   id_cenario = intent.getIntExtra("lat")
@@ -48,9 +48,9 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             intent1.putExtra("longitude", longitude);
         }
 
-        System.out.println("1 "+listaRespostas.get(0));
-        System.out.println("1 "+longitude);
-        System.out.println("1 "+latitude);
+        //System.out.println("1 "+listaRespostas.get(0));
+        //System.out.println("1 "+longitude);
+        //System.out.println("1 "+latitude);
 
         context.startService(intent1);
 

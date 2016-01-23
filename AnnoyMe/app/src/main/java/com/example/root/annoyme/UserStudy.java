@@ -18,11 +18,11 @@ public class UserStudy extends AppCompatActivity implements NoticeDialogFragment
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //System.out.println("aqui-user");
+        ////System.out.println("aqui-user");
 
         listaRespostas = getIntent().getStringArrayListExtra("respostas");
 
-        System.out.println("aqui-user: " + listaRespostas.get(0));
+        //System.out.println("aqui-user: " + listaRespostas.get(0));
 
         //  setContentView(R.layout.main);
         showNoticeDialog();

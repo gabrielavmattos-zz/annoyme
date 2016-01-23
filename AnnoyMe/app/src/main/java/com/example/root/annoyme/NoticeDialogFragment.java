@@ -41,19 +41,19 @@ public class NoticeDialogFragment extends DialogFragment {
 
         dados = new Dados();
 
-        System.out.println("aqui2");
+        //System.out.println("aqui2");
 
         listaRespostas = getActivity().getIntent().getStringArrayListExtra("respostas");
-        System.out.println("hora certa: "+ listaRespostas.get(0));
+        //System.out.println("hora certa: "+ listaRespostas.get(0));
         latitude = getActivity().getIntent().getDoubleExtra("latitude", 0);
         longitude = getActivity().getIntent().getDoubleExtra("longitude", 0);
 
         mSelectedItems = new ArrayList();  // Where we track the selected items
-        System.out.println(longitude);
+        //System.out.println(longitude);
 
-        System.out.println(latitude);
+        //System.out.println(latitude);
 
-        System.out.println("aqui "+  getActivity().getIntent().getDoubleExtra("latitude",0));
+        //System.out.println("aqui "+  getActivity().getIntent().getDoubleExtra("latitude",0));
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(getText(R.string.userStudy_agoraNao_p))
                 .setMultiChoiceItems(R.array.userStudy_agoraNao_r, null,
@@ -74,16 +74,16 @@ public class NoticeDialogFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         // Send the positive button event b
 
-                        System.out.println(longitude);
+                        //System.out.println(longitude);
 
-                        System.out.println(latitude);
+                        //System.out.println(latitude);
                         listaRespostas.add("("+String.valueOf(latitude));
                         listaRespostas.add(String.valueOf(longitude)+")");
 
 
                         final String[] answers = getResources().getStringArray(R.array.userStudy_agoraNao_r);
                         for (int i = 0; i < mSelectedItems.size(); i++) {
-                            System.out.println(answers[((int) mSelectedItems.get(i))]);
+                            //System.out.println(answers[((int) mSelectedItems.get(i))]);
                             listaRespostas.add(answers[((int) mSelectedItems.get(i))]);
 
                         }

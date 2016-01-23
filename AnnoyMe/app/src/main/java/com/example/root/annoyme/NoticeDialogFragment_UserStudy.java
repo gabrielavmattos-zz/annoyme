@@ -35,20 +35,20 @@ public class NoticeDialogFragment_UserStudy extends DialogFragment {
 
         cenario = new Cenario();
 
-        System.out.println("aqui2");
-        System.out.println(getActivity().getIntent().getStringArrayListExtra("respostas"));
+        //System.out.println("aqui2");
+        //System.out.println(getActivity().getIntent().getStringArrayListExtra("respostas"));
         //      listaRespostas = getArguments().getStringArrayList("respostas");
 
         listaRespostas = getActivity().getIntent().getStringArrayListExtra("respostas");
         String cenario1 = cenario.getCenario(0,0);
         listaRespostas.add(cenario1);
-//        System.out.println("hora certa: " + listaRespostas.get(0));
+//        //System.out.println("hora certa: " + listaRespostas.get(0));
 //        TextView textView = (TextView) getActivity().findViewById(R.id.interrupcao_cenario);
 //        textView.setText(cenario1);
 
     //    listaRespostas.add(cenarios)
 
-        System.out.println("aqui"); // Get the layout inflater
+        //System.out.println("aqui"); // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
 
@@ -77,7 +77,7 @@ public class NoticeDialogFragment_UserStudy extends DialogFragment {
                         Intent nextActivity = new Intent(getActivity(), UserStudy1.class);
 
                         listaRespostas.add("QueroDelegar");
-                        System.out.println("aqui delegar");
+                        //System.out.println("aqui delegar");
                         //   nextActivity.putStringArrayListExtra("respostas", listaRespostas);
                         nextActivity.putStringArrayListExtra("respostas", listaRespostas);
                         startActivity(nextActivity);
