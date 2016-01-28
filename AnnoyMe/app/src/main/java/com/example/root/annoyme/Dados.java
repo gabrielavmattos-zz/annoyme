@@ -173,6 +173,26 @@ public class Dados {
         }
     }
 
+    public boolean verificarEtapa(String label)
+    {
+
+        try {
+            InputStream in = new FileInputStream(diretorio.getAbsolutePath() + "/"+label+".csv");
+            if(in == null) {
+                return false;
+
+            }
+            else
+                return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+
     public void exibeDialogo(String mensagem, Context context) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setPositiveButton("OK", null);

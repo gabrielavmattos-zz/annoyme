@@ -94,11 +94,11 @@
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p2_r3"
+                            android:text="@string/coletaDemo1_p2_r2"
                             android:layout_marginLeft="55dp" />
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p2_r2"
+                            android:text="@string/coletaDemo1_p2_r3"
                             android:layout_marginLeft="55dp" />
 
 
@@ -255,4 +255,4 @@
 
     </LinearLayout>
 
-</LinearLayout><!-- From: file:/C:/Users/Jessica/Documents/GitHub/annoyme/AnnoyMe/app/src/main/res/layout/coletademo1.xml -->
+</LinearLayout><!-- From: file:/home/gabriela/Dropbox/annoyme/AnnoyMe/app/src/main/res/layout/coletademo1.xml -->

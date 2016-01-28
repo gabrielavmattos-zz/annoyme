@@ -94,11 +94,11 @@
 
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p2_r3"
+                            android:text="@string/coletaDemo1_p2_r2"
                             android:layout_marginLeft="55dp" />
                         <RadioButton
                             style="@style/fontAnswer"
-                            android:text="@string/coletaDemo1_p2_r2"
+                            android:text="@string/coletaDemo1_p2_r3"
                             android:layout_marginLeft="55dp" />
 
 
